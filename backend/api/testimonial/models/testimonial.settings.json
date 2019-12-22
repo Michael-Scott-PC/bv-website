@@ -1,0 +1,26 @@
+{
+  "info": {
+    "name": "Testimonial"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "client_name": {
+      "type": "string"
+    },
+    "client_testimonial": {
+      "type": "richtext",
+      "required": true
+    },
+    "client_company": {
+      "type": "string"
+    },
+    "client_title": {
+      "type": "string"
+    }
+  },
+  "connection": "default",
+  "collectionName": "testimonials"
+}

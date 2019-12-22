@@ -1,0 +1,46 @@
+{
+  "connection": "default",
+  "collectionName": "realtors",
+  "info": {
+    "name": "Realtor"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "about": {
+      "type": "richtext"
+    },
+    "cell": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "facebook": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "linkedin": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "office_phone": {
+      "type": "string"
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "headshot": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

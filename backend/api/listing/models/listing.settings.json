@@ -1,0 +1,121 @@
+{
+  "connection": "default",
+  "collectionName": "listings",
+  "info": {
+    "name": "Listing"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "heating_fuel": {
+      "type": "string"
+    },
+    "bathrooms": {
+      "type": "decimal",
+      "max": 50,
+      "required": true
+    },
+    "bedrooms": {
+      "type": "integer",
+      "max": 50,
+      "required": true
+    },
+    "garage": {
+      "type": "decimal",
+      "max": 20,
+      "required": true
+    },
+    "price": {
+      "type": "biginteger",
+      "required": true
+    },
+    "open_house": {
+      "type": "datetime"
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "zipcode": {
+      "type": "string",
+      "required": true
+    },
+    "lot_size": {
+      "type": "decimal"
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "neighborhood": {
+      "type": "string"
+    },
+    "square_feet": {
+      "type": "integer"
+    },
+    "basement": {
+      "type": "string"
+    },
+    "open_house_end_time": {
+      "type": "datetime"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "year_built": {
+      "type": "integer"
+    },
+    "heating": {
+      "type": "string"
+    },
+    "cooling": {
+      "type": "string"
+    },
+    "summer_tax": {
+      "type": "integer"
+    },
+    "winter_tax": {
+      "type": "integer"
+    },
+    "water": {
+      "type": "string"
+    },
+    "school_district": {
+      "type": "string"
+    },
+    "publish": {
+      "type": "boolean",
+      "default": true
+    },
+    "photos": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "cover_photo": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "list_date": {
+      "type": "datetime"
+    },
+    "property_type": {
+      "type": "string"
+    },
+    "availability": {
+      "type": "enumeration",
+      "enum": [
+        "ForSale",
+        "ForRent"
+      ]
+    },
+    "realtor": {
+      "model": "realtor"
+    }
+  }
+}

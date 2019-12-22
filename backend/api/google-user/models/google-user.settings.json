@@ -1,0 +1,24 @@
+{
+  "info": {
+    "name": "Google User"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "familyName": {
+      "type": "string",
+      "required": false
+    },
+    "givenName": {
+      "type": "string",
+      "required": false
+    },
+    "email": {
+      "type": "email"
+    }
+  },
+  "connection": "default",
+  "collectionName": "google_users"
+}
