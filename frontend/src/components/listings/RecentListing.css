@@ -1,0 +1,33 @@
+.recent-listing-card {
+    color: #FFFFFF;
+    background-color: #676F97;
+}
+
+.recent-listing.card-header {
+    background-color: #676F97;
+    color: #FFFFFF;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.recent-listing.card-header {
+    border-bottom: none;
+}
+
+.info.btn {
+    background-color: #3A4A7B;
+    color: #FFFFFF;
+    width: 50%;
+}
+
+div.img-hover-zoom {
+    overflow: hidden;
+}
+
+img.cover-photo {
+    transition: transform 1s;
+}
+
+img.cover-photo:hover {
+    transform: scale(1.2);
+}

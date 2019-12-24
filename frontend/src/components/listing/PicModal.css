@@ -1,0 +1,53 @@
+.modal-content {
+  box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.3);
+  height: auto;
+}
+
+.large-photo-row {
+  justify-content: center;
+}
+
+.large-photo-modal {
+  height: 40vh;
+}
+
+ul.react-multi-carousel-track {
+  height: 20vh;
+}
+
+.modal-address {
+  color: #000000;
+}
+
+.modal-header {
+  padding-bottom: 0;
+  display: inline-block;
+  align-self: flex-end;
+}
+
+button.close {
+  font-size: 3.5em;
+  padding-top: 0 !important;
+  padding-bottom: 5px !important;
+}
+
+.modal-row {
+  background-color: #ffffff;
+}
+
+.btn-for-modal {
+  width: 100%;
+}
+
+.center-modal {
+  align-self: center;
+}
+
+@media (min-width: 768px) {
+  ul.react-multi-carousel-track {
+    height: 30vh;
+  }
+  .pic-modal-body {
+    height: 62vh;
+  }
+}

@@ -523,7 +523,8 @@
           "price",
           "city",
           "zipcode",
-          "address"
+          "address",
+          "state"
         ],
         "properties": {
           "id": {
@@ -746,6 +747,9 @@
                 "type": "string"
               }
             }
+          },
+          "state": {
+            "type": "string"
           }
         }
       },
@@ -757,7 +761,8 @@
           "price",
           "city",
           "zipcode",
-          "address"
+          "address",
+          "state"
         ],
         "properties": {
           "heating_fuel": {
@@ -844,6 +849,9 @@
             ]
           },
           "realtor": {
+            "type": "string"
+          },
+          "state": {
             "type": "string"
           }
         }

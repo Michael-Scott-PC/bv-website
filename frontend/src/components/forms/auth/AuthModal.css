@@ -1,0 +1,26 @@
+.auth-header {
+    border-bottom: none;
+    padding-top: 0;
+}
+
+.row.nav-row {
+    display: contents;
+    border: 1px solid red;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.auth-nav-tabs {
+    width: 100%;
+}
+
+.auth-nav-item {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.auth-text {
+    font-size: 1.75em;
+}

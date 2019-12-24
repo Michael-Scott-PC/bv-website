@@ -13,7 +13,7 @@
       "type": "text",
       "required": true
     },
-    "Publish": {
+    "publish": {
       "type": "boolean",
       "default": true
     },

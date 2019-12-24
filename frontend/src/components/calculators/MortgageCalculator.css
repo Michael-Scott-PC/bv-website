@@ -1,0 +1,37 @@
+.mortgage-calculator {
+    /* border: 1px solid red; */
+    /* background-color: rgb(135, 206, 235);
+    background: radial-gradient(ellipse at top, #87ceeb, transparent),
+                radial-gradient(ellipse at bottom, #ffffff, transparent); */
+    /* background: radial-gradient(circle at top, #3884a1 10%, #87ceeb 55%, #FFFFFF 100%); */
+    background: radial-gradient(circle at top, #3883a173 20%, #addff375 100%, #FFFFFF 100%);
+}
+
+.mortgage.card {
+    background-color: rgba(255, 255, 255, .65);
+    color: #000000;
+}
+
+label {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+.calculate.btn {
+    background-color: #758BFD;
+    color: #ffffff;
+    font-size: 1.25em;
+    width: 55%
+}
+
+.estimate {
+    width: 75%;
+}
+
+p.zillow {
+    color: #000000;
+}
+
+select#inputState {
+    text-align-last: center;
+}

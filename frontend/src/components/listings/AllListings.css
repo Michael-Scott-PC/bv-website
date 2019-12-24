@@ -1,0 +1,21 @@
+/* .card {
+    background-color: #676F97;
+    border-radius: 10px;
+} */
+
+.card-img-overlay {
+    position: absolute;
+    top: 0;
+    right: unset;
+    bottom: unset;
+    left: 0;
+    padding: 1.25rem;
+}
+
+p.info {
+    color: #000000;
+}
+
+.info {
+    font-size: 1.25em;
+}

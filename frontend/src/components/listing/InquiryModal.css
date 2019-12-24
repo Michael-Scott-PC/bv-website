@@ -1,0 +1,14 @@
+.inquiry-modal-header {
+    align-self: unset !important;
+    display: flex;
+    border-bottom: none;
+}
+
+.inquiry-modal-envelope {
+    color: #000000;
+    font-size: 2em;
+}
+
+.make-an-inquiry {
+    color: #676F97;
+}

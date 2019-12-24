@@ -1,0 +1,40 @@
+.divider {
+    display: block;
+    color: black;
+    background-color: black;
+    min-width: 100px;
+    width: 50%;
+    height: 2px;
+}
+
+input#formGroupPassword {
+    background-color: #EBEBEB;
+    box-shadow: 0px 3px 6px;
+}
+
+input#formGroupPassword2 {
+    background-color: #EBEBEB;
+    box-shadow: 0px 3px 6px;
+}
+
+.g-icon-col {
+    align-self: center;
+    padding-right: 0;
+}
+
+.g-name-col {
+    padding-left: 0;
+}
+
+.google-icon {
+    height: 100%;
+}
+
+/* .google-name {
+    width: 50%;
+}  */
+
+/* .row.nav-row {
+    display: inline-flex;
+    border: 1px solid red;
+} */

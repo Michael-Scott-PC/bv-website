@@ -1,0 +1,35 @@
+.footer {
+    background-color: rgb(58, 74, 123);
+    height: 250px;
+}
+
+i, p {
+    color: #ffffff;
+}
+
+p {
+    font-size: 1.3em;
+}
+
+.fab.fa-linkedin-in, .fab.fa-twitter, .fab.fa-facebook-f, .fab.fa-instagram {
+    font-size: 1.5em;
+}
+
+@media (min-width: 576px) {
+    i:hover, p.contact-info:hover {
+        color: #ffffff;
+    }
+
+    a:link {
+        text-decoration: none;
+    }
+
+    i{
+        color: #afadad;
+    }
+
+    p {
+        color: #afadad;
+        font-size: 1.5em;
+    }
+}

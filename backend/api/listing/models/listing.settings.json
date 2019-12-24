@@ -116,6 +116,10 @@
     },
     "realtor": {
       "model": "realtor"
+    },
+    "state": {
+      "type": "string",
+      "required": true
     }
   }
 }

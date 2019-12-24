@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "12/22/2019 7:50:59 PM"
+    "x-generation-date": "12/23/2019 7:06:45 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -5990,7 +5990,7 @@
           "description": {
             "type": "string"
           },
-          "Publish": {
+          "publish": {
             "type": "boolean",
             "default": true
           },
@@ -6050,7 +6050,7 @@
           "description": {
             "type": "string"
           },
-          "Publish": {
+          "publish": {
             "type": "boolean",
             "default": true
           }
@@ -6065,7 +6065,8 @@
           "price",
           "city",
           "zipcode",
-          "address"
+          "address",
+          "state"
         ],
         "properties": {
           "id": {
@@ -6288,6 +6289,9 @@
                 "type": "string"
               }
             }
+          },
+          "state": {
+            "type": "string"
           }
         }
       },
@@ -6299,7 +6303,8 @@
           "price",
           "city",
           "zipcode",
-          "address"
+          "address",
+          "state"
         ],
         "properties": {
           "heating_fuel": {
@@ -6386,6 +6391,9 @@
             ]
           },
           "realtor": {
+            "type": "string"
+          },
+          "state": {
             "type": "string"
           }
         }

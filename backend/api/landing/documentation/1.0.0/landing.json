@@ -526,7 +526,7 @@
           "description": {
             "type": "string"
           },
-          "Publish": {
+          "publish": {
             "type": "boolean",
             "default": true
           },
@@ -586,7 +586,7 @@
           "description": {
             "type": "string"
           },
-          "Publish": {
+          "publish": {
             "type": "boolean",
             "default": true
           }

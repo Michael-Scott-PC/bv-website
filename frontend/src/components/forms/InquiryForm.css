@@ -1,0 +1,50 @@
+.form-label {
+  color: #676f97;
+}
+
+/* .left-input-fields {
+    padding-left: 0;
+}
+
+.right-input-fields {
+    padding-right: 0;
+} */
+
+.submit-inquiry {
+  background-color: #758bfd;
+  width: 50%;
+  font-size: 1.5em;
+}
+
+input#formGroupPropertyAddress {
+  background-color: #ebebeb;
+  box-shadow: 0px 3px 6px;
+}
+
+input#formGroupFirstName {
+  background-color: #ebebeb;
+  box-shadow: 0px 3px 6px;
+}
+input#formGroupLastName {
+  background-color: #ebebeb;
+  box-shadow: 0px 3px 6px;
+}
+input#formGroupEmail {
+  background-color: #ebebeb;
+  box-shadow: 0px 3px 6px;
+}
+input#formGroupPhoneNumber {
+  background-color: #ebebeb;
+  box-shadow: 0px 3px 6px;
+}
+#formGroupTextArea {
+  background-color: #ebebeb;
+  box-shadow: 0px 3px 6px;
+}
+
+@media (min-width: 768px) {
+  .submit-inquiry {
+    width: 100%;
+    font-size: 1.5em;
+  }
+}
