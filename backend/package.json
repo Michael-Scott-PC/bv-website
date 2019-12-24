@@ -27,8 +27,7 @@
   "resolutions": {
     "knex": "^0.19.5",
     "cryptiles": "^4.1.2",
-    "tunnel-agent": "^0.6.0",
-    "serialize-javascript": "^2.1.1"
+    "tunnel-agent": "^0.6.0"
   },
   "author": {
     "name": "A Strapi developer"
