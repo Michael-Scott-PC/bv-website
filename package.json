@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "install:backend": "cd backend && yarn add",
+    "install:frontend": "cd frontend && yarn add",
+    "start": "run-p start:backend start:frontend",
+    "start:backend": "npm run start --prefix backend",
+    "start:frontend": "npm run start --prefix frontend",
+    "build": "run-p build:frontend",
+    "build:frontend": "cd frontend && yarn build"
+  },
+  "devDependencies": {
+    "npm-run-all": "4.0.2"
+  }
+}
