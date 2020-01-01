@@ -121,7 +121,8 @@ const MortgageCalculator = () => {
                   <Overlay
                     target={targetValue.current}
                     show={showValueOverlay}
-                    placement='bottom'>
+                    placement='bottom'
+                  >
                     {({
                       placement,
                       scheduleUpdate,
@@ -138,7 +139,8 @@ const MortgageCalculator = () => {
                           color: 'white',
                           borderRadius: 3,
                           ...props.style
-                        }}>
+                        }}
+                      >
                         Ex: Enter $200,000 as 200000
                       </div>
                     )}
@@ -166,7 +168,8 @@ const MortgageCalculator = () => {
                   <Overlay
                     target={targetLoan.current}
                     show={showLoanOverlay}
-                    placement='bottom'>
+                    placement='bottom'
+                  >
                     {({
                       placement,
                       scheduleUpdate,
@@ -183,7 +186,8 @@ const MortgageCalculator = () => {
                           color: 'white',
                           borderRadius: 3,
                           ...props.style
-                        }}>
+                        }}
+                      >
                         Ex: Enter $200,000 as 200000
                       </div>
                     )}
@@ -200,11 +204,13 @@ const MortgageCalculator = () => {
                   className='form-control'
                   ref={targetState}
                   onClick={() => setShowStateOverlay(!showStateOverlay)}
-                  onMouseLeave={() => setShowStateOverlay(!showStateOverlay)}>
+                  onMouseLeave={() => setShowStateOverlay(!showStateOverlay)}
+                >
                   <Overlay
                     target={targetState.current}
                     show={showStateOverlay}
-                    placement='right'>
+                    placement='right'
+                  >
                     {({
                       placement,
                       scheduleUpdate,
@@ -221,7 +227,8 @@ const MortgageCalculator = () => {
                           color: 'white',
                           borderRadius: 3,
                           ...props.style
-                        }}>
+                        }}
+                      >
                         Leaving State as "US" &amp; Zipcode blank will return
                         national averages.
                       </div>
@@ -231,7 +238,8 @@ const MortgageCalculator = () => {
                     <option
                       key={state}
                       value={state_choices[state]}
-                      defaultValue>
+                      defaultValue
+                    >
                       {state}
                     </option>
                   ))}
@@ -239,7 +247,8 @@ const MortgageCalculator = () => {
               </div>
               <p
                 alt="'or' means you may specify a state or zipcode"
-                style={{ color: 'black' }}>
+                style={{ color: 'black' }}
+              >
                 Or
               </p>
               <div className='form-group col'>
@@ -258,7 +267,8 @@ const MortgageCalculator = () => {
                 <Overlay
                   target={targetLocation.current}
                   show={showLocationOverlay}
-                  placement='bottom'>
+                  placement='bottom'
+                >
                   {({
                     placement,
                     scheduleUpdate,
@@ -275,7 +285,8 @@ const MortgageCalculator = () => {
                         color: 'white',
                         borderRadius: 3,
                         ...props.style
-                      }}>
+                      }}
+                    >
                       If you enter a zip code, you must enter the Property Value
                       &amp; Loan Amount fields.
                     </div>
@@ -289,12 +300,14 @@ const MortgageCalculator = () => {
                 <select
                   onChange={e => setProgram(e.target.value)}
                   id='inputState'
-                  className='form-control'>
+                  className='form-control'
+                >
                   {Object.keys(programs).map(program => (
                     <option
                       value={programs[program]}
                       key={program}
-                      defaultValue>
+                      defaultValue
+                    >
                       {program}
                     </option>
                   ))}
@@ -305,12 +318,14 @@ const MortgageCalculator = () => {
                 <select
                   onChange={e => setCreditScore(e.target.value)}
                   id='inputState'
-                  className='form-control'>
+                  className='form-control'
+                >
                   {Object.keys(credit_range).map(range => (
                     <option
                       key={range}
                       value={credit_range[range]}
-                      defaultValue>
+                      defaultValue
+                    >
                       {range}
                     </option>
                   ))}
@@ -356,7 +371,7 @@ const MortgageCalculator = () => {
           </form>
           <p className='zillow'>
             See more{' '}
-            <a href='http://www.zillow.com/mortgage-rates/.'>mortgage rates</a>{' '}
+            <a href='https://www.zillow.com/mortgage-rates/.'>mortgage rates</a>{' '}
             on Zillow
           </p>
         </div>

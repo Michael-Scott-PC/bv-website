@@ -14,7 +14,7 @@
   "admin": {
     "autoOpen": true,
     "build": {
-      "backend": "http://157.245.14.110:1337"
+      "backend": "https://157.245.14.110:1337"
     }
   }
 }
