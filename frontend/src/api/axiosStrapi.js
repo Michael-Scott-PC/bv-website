@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const baseURL = '157.245.14.110:1337';
+const apiURL = 'https://homessoldbybrian.com';
 
 export default axios.create({
-  baseURL: `${baseURL}`
+  baseURL: `${apiURL}`
 });

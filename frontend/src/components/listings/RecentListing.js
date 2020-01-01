@@ -31,7 +31,7 @@ const RecentListing = ({
   const renderCoverPhoto = () => {
     if (cover_photo) {
       const { url } = cover_photo;
-      return `http://localhost:1337${url}`;
+      return `https://localhost:1337${url}`;
     }
   };
 

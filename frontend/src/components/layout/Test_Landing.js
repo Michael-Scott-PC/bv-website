@@ -19,10 +19,10 @@ const Landing = ({ getLandingImage, landing: { landing, loading } }) => {
             <div className='row' style={{ height: '250px', width: '100%' }}>
               <img
                 className='landing img-fluid'
-                // src={`http://localhost:1337${url}`}
+                // src={`https://localhost:1337${url}`}
                 // alt={landing.description}
                 style={{
-                  background: `url(http://localhost:1337${url}) 0% 19%`,
+                  background: `url(https://localhost:1337${url}) 0% 19%`,
                   backgroundAttachment: 'fixed',
                   backgroundRepeat: 'no-repeat',
                   backgroundSize: 'contain',

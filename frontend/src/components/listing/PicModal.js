@@ -108,10 +108,10 @@ const PicModal = props => {
               <div key={photo.id} className='mx-2 my-2'>
                 <img
                   className='img-fluid thumbnail-img-modal'
-                  src={`http://localhost:1337${photo.url}`}
+                  src={`https://localhost:1337${photo.url}`}
                   alt='pictures of a property'
                   onClick={() =>
-                    setCurrent(`http://localhost:1337${photo.url}`)
+                    setCurrent(`https://localhost:1337${photo.url}`)
                   }
                 />
               </div>

@@ -3,12 +3,18 @@
   "port": 1337,
   "production": true,
   "proxy": {
-    "enabled": false
+    "enabled": true,
+    "ssl": true,
+    "host": "homessoldbybrian.com",
+    "port": 80
   },
   "cron": {
-    "enabled": false
+    "enabled": true
   },
   "admin": {
-    "autoOpen": false
+    "autoOpen": true,
+    "build": {
+      "backend": "http://157.245.14.110:1337"
+    }
   }
 }

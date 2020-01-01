@@ -1,9 +1,9 @@
-import "./Landing.css";
-import React, { Fragment, useEffect } from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { getLandingImage } from "../../actions/landing";
-import Spinner from "../spinner/Spinner";
+import './Landing.css';
+import React, { Fragment, useEffect } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { getLandingImage } from '../../actions/landing';
+import Spinner from '../spinner/Spinner';
 
 const Landing = ({ getLandingImage, landing: { landing, loading } }) => {
   useEffect(() => {
@@ -18,8 +18,8 @@ const Landing = ({ getLandingImage, landing: { landing, loading } }) => {
         const { url } = landing.landing_photo;
         return (
           <img
-            className="landing img-fluid"
-            src={`http://localhost:1337${url}`}
+            className='landing img-fluid'
+            src={`https://localhost:1337${url}`}
             alt={landing.description}
           />
         );
