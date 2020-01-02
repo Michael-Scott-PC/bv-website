@@ -1,6 +1,6 @@
-import axios from "../api/axiosStrapi";
+import axios from '../api/axiosStrapi';
 
-import { GET_BRIAN, GET_REALTORS, GET_BRIAN_HEADSHOT } from "./types";
+import { GET_BRIAN, GET_REALTORS } from './types';
 
 // Get a specific realtor
 export const getBrianInfo = () => async dispatch => {
@@ -19,29 +19,11 @@ export const getBrianInfo = () => async dispatch => {
 // Get all realtors
 export const getRealtors = () => async dispatch => {
   try {
-    const res = await axios.get("/realtors");
+    const res = await axios.get('/realtors');
 
     dispatch({
       type: GET_REALTORS,
       payload: res.data
-    });
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-// Get Brian's headshot object
-export const getHeadshot = () => async dispatch => {
-  try {
-    const res = await axios.get(
-      `uploads/9ae3868c4a9d474daf79d3df5ce73993.jpeg`
-    );
-
-    // console.log(res);
-
-    dispatch({
-      type: GET_BRIAN_HEADSHOT,
-      payload: res.config.url
     });
   } catch (error) {
     console.log(error);

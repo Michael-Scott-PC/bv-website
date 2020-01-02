@@ -28,7 +28,7 @@ const NewsEvents = ({
               <div className='col-4 open-house-img-col'>
                 <img
                   className='card-img-top'
-                  src={`https://localhost:1337${allListings[i].cover_photo.url}`}
+                  src={`${process.env.REACT_APP_STRAPIURL}${allListings[i].cover_photo.url}`}
                   alt='property for sale'
                   style={{
                     width: '100%',

@@ -13,7 +13,7 @@ const Listing = ({ listing }) => {
         <div className='img-hover-zoom'>
           <img
             className='card-img-top listing-card-img-top img-fluid cover-photo'
-            src={`https://localhost:1337${listing.cover_photo.url}`}
+            src={`${process.env.REACT_APP_STRAPIURL}${listing.cover_photo.url}`}
             alt={listing.description}
           />
         </div>

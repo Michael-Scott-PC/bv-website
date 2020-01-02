@@ -31,7 +31,7 @@ const RecentListing = ({
   const renderCoverPhoto = () => {
     if (cover_photo) {
       const { url } = cover_photo;
-      return `https://localhost:1337${url}`;
+      return `${process.env.REACT_APP_STRAPIURL}${url}`;
     }
   };
 

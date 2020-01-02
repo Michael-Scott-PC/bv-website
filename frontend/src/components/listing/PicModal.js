@@ -108,10 +108,10 @@ const PicModal = props => {
               <div key={photo.id} className='mx-2 my-2'>
                 <img
                   className='img-fluid thumbnail-img-modal'
-                  src={`https://localhost:1337${photo.url}`}
+                  src={`${process.env.REACT_APP_STRAPIURL}${photo.url}`}
                   alt='pictures of a property'
                   onClick={() =>
-                    setCurrent(`https://localhost:1337${photo.url}`)
+                    setCurrent(`${process.env.REACT_APP_STRAPIURL}${photo.url}`)
                   }
                 />
               </div>

@@ -1,33 +1,28 @@
-import "./About.css";
-import React, { Fragment, useEffect } from "react";
-import { connect } from "react-redux";
-import { render } from "react-dom";
-import PropTypes from "prop-types";
-import Markdown from "markdown-to-jsx";
-import { Controller, Scene } from "react-scrollmagic";
-import { Tween, Timeline } from "react-gsap";
-import styled from "styled-components";
+import './About.css';
+import React, { Fragment, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { render } from 'react-dom';
+import PropTypes from 'prop-types';
+import Markdown from 'markdown-to-jsx';
+import { Controller, Scene } from 'react-scrollmagic';
+import { Tween, Timeline } from 'react-gsap';
+import styled from 'styled-components';
 
-import { getBrianInfo, getHeadshot } from "../../actions/realtor";
-import Spinner from "../spinner/Spinner";
+import { getBrianInfo } from '../../actions/realtor';
+import Spinner from '../spinner/Spinner';
 
-const About = ({
-  getBrianInfo,
-  getHeadshot,
-  brian: { brian, brian_headshot_url }
-}) => {
+const About = ({ getBrianInfo, brian: { brian, brian_headshot_url } }) => {
   useEffect(() => {
     getBrianInfo();
-    getHeadshot();
-  }, [getBrianInfo, getHeadshot]);
+  }, [getBrianInfo]);
 
-  const { about, loading } = brian;
+  const { about, loading, headshot } = brian;
 
   if (!about) {
     return null;
   } else {
     setTimeout(function() {
-      render(<Markdown>{about}</Markdown>, document.getElementById("markup"));
+      render(<Markdown>{about}</Markdown>, document.getElementById('markup'));
     }, 500);
   }
 
@@ -46,63 +41,67 @@ const About = ({
 
   return (
     <Fragment>
-      <div className="about container-fluid px-3 py-5">
+      <div className='about container-fluid px-3 py-5'>
         {brian === null ||
         brian_headshot_url === null ||
         about === null ||
         loading ? (
           <Spinner />
         ) : (
-          <div className="card about-card">
-            <div className="row no-gutters">
-              <div className="col-md-5">
+          <div className='card about-card'>
+            <div className='row no-gutters'>
+              <div className='col-md-5'>
                 <SplitTextStyled>
                   <Controller>
                     <Scene
-                      triggerElement=".brian"
-                      triggerHook="onCenter"
+                      triggerElement='.brian'
+                      triggerHook='onCenter'
                       pin={false}
                       reverse={false}
                       duration={10}
                       offset={0}
                     >
-                      <Timeline wrapper={<div id="pinContainer" />}>
-                        <Tween from={{ x: "100%" }} to={{ x: "0%" }}>
-                          <img
-                            src={brian_headshot_url}
-                            alt=""
-                            className="brian card-img-top"
-                            style={{
-                              borderTopLeftRadius: "8px",
-                              borderTopRightRadius: "8px"
-                            }}
-                          />
+                      <Timeline wrapper={<div id='pinContainer' />}>
+                        <Tween from={{ x: '100%' }} to={{ x: '0%' }}>
+                          {!headshot ? (
+                            <Spinner />
+                          ) : (
+                            <img
+                              src={`${process.env.REACT_APP_STRAPIURL}${headshot.url}`}
+                              alt=''
+                              className='brian card-img-top'
+                              style={{
+                                borderTopLeftRadius: '8px',
+                                borderTopRightRadius: '8px'
+                              }}
+                            />
+                          )}
                         </Tween>
                       </Timeline>
                     </Scene>
                   </Controller>
                 </SplitTextStyled>
               </div>
-              <div className="col-md-7">
-                <div className="about card-body">
+              <div className='col-md-7'>
+                <div className='about card-body'>
                   <SplitTextStyled>
                     <Controller>
                       <Scene
-                        triggerElement="#markup"
-                        triggerHook="onCenter"
+                        triggerElement='#markup'
+                        triggerHook='onCenter'
                         pin={false}
                         reverse={false}
                         duration={10}
                         offset={0}
                       >
-                        <Timeline wrapper={<div id="pinContainer" />}>
-                          <Tween from={{ x: "100%" }} to={{ x: "0%" }}>
-                            <h2 className="about panel card-title text-center">
+                        <Timeline wrapper={<div id='pinContainer' />}>
+                          <Tween from={{ x: '100%' }} to={{ x: '0%' }}>
+                            <h2 className='about panel card-title text-center'>
                               ABOUT BRIAN
                             </h2>
                             <div
-                              id="markup"
-                              className="about panel card-text text-center"
+                              id='markup'
+                              className='about panel card-text text-center'
                             ></div>
                           </Tween>
                         </Timeline>
@@ -127,4 +126,4 @@ const mapStateToProps = state => ({
   brian: state.realtorReducer
 });
 
-export default connect(mapStateToProps, { getBrianInfo, getHeadshot })(About);
+export default connect(mapStateToProps, { getBrianInfo })(About);

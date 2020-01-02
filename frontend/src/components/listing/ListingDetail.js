@@ -97,7 +97,7 @@ const ListingDetail = ({
   const renderCoverPhoto = () => {
     if (cover_photo) {
       const { url } = cover_photo;
-      return `https://localhost:1337${url}`;
+      return `${process.env.REACT_APP_STRAPIURL}${url}`;
     }
   };
 
@@ -171,12 +171,12 @@ const ListingDetail = ({
                   <img
                     key={photo.id}
                     className='img-fluid thumbnail-img'
-                    src={`https://localhost:1337${photo.url}`}
+                    src={`${process.env.REACT_APP_STRAPIURL}${photo.url}`}
                     alt='pictures of a property'
                     onClick={() =>
                       setShow({
                         showPicModal: true,
-                        currentPhoto: `https://localhost:1337${photo.url}`
+                        currentPhoto: `${process.env.REACT_APP_STRAPIURL}${photo.url}`
                       })
                     }
                   />

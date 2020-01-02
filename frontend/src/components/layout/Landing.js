@@ -19,7 +19,7 @@ const Landing = ({ getLandingImage, landing: { landing, loading } }) => {
         return (
           <img
             className='landing img-fluid'
-            src={`https://localhost:1337${url}`}
+            src={`${process.env.REACT_APP_STRAPIURL}${url}`}
             alt={landing.description}
           />
         );

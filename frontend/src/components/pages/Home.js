@@ -10,6 +10,7 @@ import Testimonials from '../customers/Testimonials';
 // import Alert from '../layout/Alert';
 
 const Home = () => {
+  console.log(process.env.REACT_APP_STRAPIURL);
   return (
     <Fragment>
       {/* <Navbar /> */}
