@@ -5,7 +5,7 @@ import { GET_BRIAN, GET_REALTORS } from './types';
 // Get a specific realtor
 export const getBrianInfo = () => async dispatch => {
   try {
-    const res = await axios.get(`/realtors/5dfeebd0288f8159fcb1c6a8`);
+    const res = await axios.get(`/realtors/${process.env.REACT_APP_BRIANS_ID}`);
 
     dispatch({
       type: GET_BRIAN,
