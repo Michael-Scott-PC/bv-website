@@ -51,7 +51,7 @@ const RecentListing = ({
           </div>
           <div className='card-img-overlay'>
             <h2>
-              <span className='badge badge-primary'>
+              <span className='badge badge-price'>
                 <NumberFormat
                   value={price}
                   displayType={'text'}

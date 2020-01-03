@@ -1,45 +1,50 @@
 .card {
-    /* background-color: #676F97; */
-    border-radius: 10px;
+  /* background-color: #676F97; */
+  border-radius: 10px;
 }
 
 .listing-card {
-    border: 0;
-    background-color: #676F97;
+  border: 0;
+  background-color: #676f97;
+  color: #ffffff;
 }
 
 .card-img-overlay {
-    position: absolute;
-    top: 0;
-    right: unset;
-    bottom: unset;
-    left: 0;
-    padding: 1.25rem;
+  position: absolute;
+  top: 0;
+  right: unset;
+  bottom: unset;
+  left: 0;
+  padding: 1.25rem;
 }
 
 p.info {
-    color: #000000;
+  color: #000000;
 }
 
 .info {
-    font-size: 1.25em;
+  font-size: 1.25em;
 }
 
 .listing-card-img-top {
-    width: 100%;
-    height: 40vh;
-    object-fit: cover;
-    border-radius: 10px;
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 div.img-hover-zoom {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 img.cover-photo {
-    transition: transform 1s;
+  transition: transform 1s;
 }
 
 img.cover-photo:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.badge-price {
+  background-color: #3ed43f;
 }

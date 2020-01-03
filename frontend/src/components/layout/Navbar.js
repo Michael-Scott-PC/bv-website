@@ -10,11 +10,7 @@ import AuthModal from '../forms/auth/AuthModal';
 import { logout } from '../../actions/profile';
 // import history from '../../history';
 
-const Navbar = ({
-  toggle,
-  authReducer: { loading, user, googleUser },
-  logout
-}) => {
+const Navbar = ({ authReducer: { loading, user, googleUser }, logout }) => {
   const logoutRes = () => {
     logout();
   };
@@ -64,10 +60,17 @@ const Navbar = ({
   const [bar2, setBar2] = useState(false);
   const [bar3, setBar3] = useState(false);
 
-  toggle = () => {
+  const toggle = () => {
     bar1 ? setBar1(false) : setBar1(true);
     bar2 ? setBar2(false) : setBar2(true);
     bar3 ? setBar3(false) : setBar3(true);
+  };
+
+  const closeHamburger = () => {
+    document
+      .getElementById('navbarToggleExternalContent')
+      .classList.remove('show');
+    toggle();
   };
 
   const [showAuthModal, setShowAuthModal] = useState(false);
@@ -109,42 +112,56 @@ const Navbar = ({
         />
       </nav>
       <div className='collapse sticky-top' id='navbarToggleExternalContent'>
-        <Link to='/' className='dropdown-item pt-4'>
-          Home
-        </Link>
-        <Link to='/listings' className='dropdown-item pt-4'>
-          Listings
-        </Link>
-        <Link to='/news-events' className='dropdown-item pt-4'>
-          News &amp; Events
-        </Link>
-        <Link to='/contacts' className='dropdown-item pt-4'>
-          Contact
-        </Link>
-        {!user.jwt && !googleUser.profileObj ? (
-          <a
-            href='#!'
-            className='dropdown-item pt-4'
-            onClick={() => setShowAuthModal(true)}
+        <div className='link-container'>
+          <Link to='/' className='dropdown-item' onClick={closeHamburger}>
+            <p>Home</p>
+          </Link>
+          <Link
+            to='/listings'
+            className='dropdown-item'
+            onClick={closeHamburger}
           >
-            Sign In or Join
-          </a>
-        ) : (
-          renderAuthenticatedNav()
-        )}
-        {!user.jwt && !googleUser.profileObj ? (
-          <AuthModal
-            onEnter={check}
-            show={showAuthModal}
-            onHide={() => setShowAuthModal(false)}
-          />
-        ) : (
-          <AuthModal
-            onEnter={check}
-            show={!showAuthModal}
-            // onHide={() => setShowAuthModal(false)}
-          />
-        )}
+            <p>Listings</p>
+          </Link>
+          <Link
+            to='/news-events'
+            className='dropdown-item'
+            onClick={closeHamburger}
+          >
+            <p>News &amp; Events</p>
+          </Link>
+          <Link
+            to='/contacts'
+            className='dropdown-item'
+            onClick={closeHamburger}
+          >
+            <p>Contact</p>
+          </Link>
+          {!user.jwt && !googleUser.profileObj ? (
+            <a
+              href='#!'
+              className='dropdown-item'
+              onClick={() => setShowAuthModal(true)}
+            >
+              <p>Sign In or Join</p>
+            </a>
+          ) : (
+            renderAuthenticatedNav()
+          )}
+          {!user.jwt && !googleUser.profileObj ? (
+            <AuthModal
+              onEnter={check}
+              show={showAuthModal}
+              onHide={() => setShowAuthModal(false)}
+            />
+          ) : (
+            <AuthModal
+              onEnter={check}
+              show={!showAuthModal}
+              // onHide={() => setShowAuthModal(false)}
+            />
+          )}
+        </div>
       </div>
     </Fragment>
   );
