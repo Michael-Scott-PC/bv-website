@@ -1,15 +1,20 @@
-.about.container-fluid {
-  /* background: linear-gradient(300deg,rgba(0, 0, 255, 0) 40%, #676F97),
+/* .about.container-fluid {
+background: linear-gradient(300deg,rgba(0, 0, 255, 0) 40%, #676F97),
                 linear-gradient(45deg,rgba(197, 200, 230, 0) 40%, #a982ce),
-                linear-gradient(180deg, rgba(16, 177, 189, 0) 40%, #9198e5); */
+                linear-gradient(180deg, rgba(16, 177, 189, 0) 40%, #9198e5);
   background: linear-gradient(300deg, rgba(0, 0, 255, 0) 50%, #90b3ff),
     linear-gradient(45deg, rgba(197, 200, 230, 0) 35%, #e4d7f1),
     linear-gradient(180deg, rgba(16, 177, 189, 0) 50%, #dee2e6);
-}
+} */
 
 .card {
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 255, 0.2);
   background-color: unset;
+}
+
+.about-card {
+  box-shadow: none;
+  border: none;
 }
 
 h2.about.card-title {
@@ -26,7 +31,7 @@ h2.about.card-title {
 }
 
 .about.card-title {
-  color: #ffffff;
+  color: #1f475b;
   font-family: 'Agency FB';
 }
 

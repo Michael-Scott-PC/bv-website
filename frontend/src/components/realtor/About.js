@@ -96,12 +96,12 @@ const About = ({ getBrianInfo, brian: { brian, brian_headshot_url } }) => {
                       >
                         <Timeline wrapper={<div id='pinContainer' />}>
                           <Tween from={{ x: '100%' }} to={{ x: '0%' }}>
-                            <h2 className='about panel card-title text-center'>
-                              ABOUT BRIAN
+                            <h2 className='about panel card-title'>
+                              About Brian
                             </h2>
                             <div
                               id='markup'
-                              className='about panel card-text text-center'
+                              className='about panel card-text text-justify'
                             ></div>
                           </Tween>
                         </Timeline>
