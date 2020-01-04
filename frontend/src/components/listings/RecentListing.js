@@ -76,7 +76,7 @@ const RecentListing = ({
             <p className='info'>
               <i className='fas fa-bed mr-2'></i> Bedroom: {bedrooms}
             </p>
-            <Link to={`/listings/${id}`} className='info btn'>
+            <Link to={`/listing/${id}`} className='info btn'>
               More Info
             </Link>
           </div>

@@ -6,12 +6,9 @@
     "enabled": true,
     "ssl": true,
     "host": "homessoldbybrian.com",
-    "port": 80
+    "port": 443
   },
   "cron": {
     "enabled": true
-  },
-  "admin": {
-    "autoOpen": true
   }
 }

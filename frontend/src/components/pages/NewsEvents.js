@@ -9,13 +9,33 @@ const NewsEvents = ({
   getAllListings,
   listingReducer: { allListings, loading }
 }) => {
+  const renderTwitterFeed = () => {
+    console.log('renderTwitterFeed ran.');
+    return (
+      <div className='twitter-embed'>
+        <a
+          className='twitter-timeline'
+          data-width='400'
+          data-height='800'
+          data-theme='light'
+          href='https://twitter.com/BrianVRealtor?ref_src=twsrc%5Etfw'
+        >
+          Tweets by BrianVRealtor
+        </a>
+      </div>
+    );
+  };
+
   useEffect(() => {
     getAllListings();
+    // renderTwitterFeed();
+    const script = document.createElement('script');
+    script.src = 'https://platform.twitter.com/widgets.js';
+    document.getElementsByClassName('twitter-embed')[0].appendChild(script);
   }, [getAllListings]);
 
-  console.log(allListings);
-
   const renderOpenHouses = i => {
+    console.log('renderOpenHouses ran.');
     const jsx = [];
     for (i = 0; i < allListings.length; i++) {
       if (allListings[i].open_house) {
@@ -58,19 +78,19 @@ const NewsEvents = ({
     return jsx;
   };
 
-  const renderTwitterFeed = () => {
-    return (
-      <a
-        className='twitter-timeline'
-        data-width='400'
-        data-height='800'
-        data-theme='light'
-        href='https://twitter.com/BrianVRealtor?ref_src=twsrc%5Etfw'
-      >
-        Tweets by BrianVRealtor
-      </a>
-    );
-  };
+  // const renderTwitterFeed = () => {
+  //   return (
+  //     <a
+  //       className='twitter-timeline'
+  //       data-width='400'
+  //       data-height='800'
+  //       data-theme='light'
+  //       href='https://twitter.com/BrianVRealtor?ref_src=twsrc%5Etfw'
+  //     >
+  //       Tweets by BrianVRealtor
+  //     </a>
+  //   );
+  // };
 
   return (
     <div className='container-fluid mb-3'>

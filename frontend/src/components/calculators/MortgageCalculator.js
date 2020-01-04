@@ -209,7 +209,7 @@ const MortgageCalculator = () => {
                   <Overlay
                     target={targetState.current}
                     show={showStateOverlay}
-                    placement='right'
+                    placement='bottom'
                   >
                     {({
                       placement,

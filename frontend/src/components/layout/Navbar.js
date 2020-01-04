@@ -117,7 +117,7 @@ const Navbar = ({ authReducer: { loading, user, googleUser }, logout }) => {
             <p>Home</p>
           </Link>
           <Link
-            to='/listings'
+            to='/browse-listings'
             className='dropdown-item'
             onClick={closeHamburger}
           >

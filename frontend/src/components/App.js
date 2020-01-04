@@ -21,8 +21,8 @@ const App = () => {
       <Alert />
       <Switch>
         <Route path='/' exact component={Home} />
-        <Route path='/listings' exact component={Listings} />
-        <Route path='/listings/:id' exact component={ListingDetail} />
+        <Route path='/browse-listings' exact component={Listings} />
+        <Route path='/listing/:id' exact component={ListingDetail} />
         <Route path='/news-events' exact component={NewsEvents} />
         <Route path='/contacts' exact component={Contact} />
       </Switch>

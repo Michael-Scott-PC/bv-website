@@ -44,7 +44,7 @@ const Listing = ({ listing }) => {
           <p className='info'>
             <i className='fas fa-bed mr-2'></i> Bedroom: {listing.bedrooms}
           </p>
-          <Link to={`/listings/${listing.id}`} className='info btn'>
+          <Link to={`/listing/${listing.id}`} className='info btn'>
             More Info
           </Link>
         </div>
