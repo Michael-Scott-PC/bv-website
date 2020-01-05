@@ -112,7 +112,8 @@
       "enum": [
         "ForSale",
         "ForRent"
-      ]
+      ],
+      "default": "ForSale"
     },
     "realtor": {
       "model": "realtor"

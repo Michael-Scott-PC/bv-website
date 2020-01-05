@@ -42,10 +42,10 @@ const NewsEvents = ({
         jsx.push(
           <div
             key={allListings[i].id}
-            className='card open-house-card my-4 ml-2'
+            className='card container-fluid open-house-card my-4'
           >
             <div className='row'>
-              <div className='col-4 open-house-img-col'>
+              <div className='col-5 open-house-img-col'>
                 <img
                   className='card-img-top'
                   src={`${process.env.REACT_APP_STRAPIURL}${allListings[i].cover_photo.url}`}
@@ -57,7 +57,7 @@ const NewsEvents = ({
                   }}
                 />
               </div>
-              <div className='col-8 open-house-info-col'>
+              <div className='col-7 open-house-info-col'>
                 <div className='card-header'>
                   {allListings[i].address}
                   <br />

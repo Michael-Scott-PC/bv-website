@@ -11,7 +11,26 @@ import { logout } from '../../actions/profile';
 // import history from '../../history';
 
 const Navbar = ({ authReducer: { loading, user, googleUser }, logout }) => {
+  const [bar1, setBar1] = useState(false);
+  const [bar2, setBar2] = useState(false);
+  const [bar3, setBar3] = useState(false);
+  const [showAuthModal, setShowAuthModal] = useState(false);
+
+  const toggle = () => {
+    bar1 ? setBar1(false) : setBar1(true);
+    bar2 ? setBar2(false) : setBar2(true);
+    bar3 ? setBar3(false) : setBar3(true);
+  };
+
+  const closeHamburger = () => {
+    document
+      .getElementById('navbarToggleExternalContent')
+      .classList.remove('show');
+    toggle();
+  };
+
   const logoutRes = () => {
+    closeHamburger();
     logout();
   };
 
@@ -23,7 +42,7 @@ const Navbar = ({ authReducer: { loading, user, googleUser }, logout }) => {
           <a href='#!' className='dropdown-item pt-4'>
             Welcome, {user.user.first_name}
           </a>
-          <a href='#!' className='dropdown-item pt-4' onClick={() => logout()}>
+          <a href='#!' className='dropdown-item pt-4' onClick={logoutRes}>
             Sign Out
           </a>
         </Fragment>
@@ -52,28 +71,7 @@ const Navbar = ({ authReducer: { loading, user, googleUser }, logout }) => {
     console.log(googleUser);
   };
 
-  // useEffect(() => {
-  //   check();
-  // })
-
-  const [bar1, setBar1] = useState(false);
-  const [bar2, setBar2] = useState(false);
-  const [bar3, setBar3] = useState(false);
-
-  const toggle = () => {
-    bar1 ? setBar1(false) : setBar1(true);
-    bar2 ? setBar2(false) : setBar2(true);
-    bar3 ? setBar3(false) : setBar3(true);
-  };
-
-  const closeHamburger = () => {
-    document
-      .getElementById('navbarToggleExternalContent')
-      .classList.remove('show');
-    toggle();
-  };
-
-  const [showAuthModal, setShowAuthModal] = useState(false);
+  // const [showAuthModal, setShowAuthModal] = useState(false);
 
   return (
     <Fragment>
@@ -143,7 +141,7 @@ const Navbar = ({ authReducer: { loading, user, googleUser }, logout }) => {
               className='dropdown-item'
               onClick={() => setShowAuthModal(true)}
             >
-              <p>Sign In or Join</p>
+              <p onClick={closeHamburger}>Sign In or Join</p>
             </a>
           ) : (
             renderAuthenticatedNav()

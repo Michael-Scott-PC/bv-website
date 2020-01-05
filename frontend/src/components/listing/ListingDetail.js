@@ -182,11 +182,14 @@ const ListingDetail = ({
                   />
                 ))}
             </Carousel>
+            {photos && (
+              <h5 className='total-photos'>Total Photos: {photos.length}</h5>
+            )}
           </Fragment>
         )}
-        {photos && (
+        {/* {photos && (
           <h5 className='total-photos'>Total Photos: {photos.length}</h5>
-        )}
+        )} */}
         <div className='container mt-5'>
           <h1 className='property-details-header text-center mb-3'>
             Property Details
@@ -196,7 +199,9 @@ const ListingDetail = ({
               <div className='row'>
                 <li className='listing-detail-item col-6 d-flex'>
                   <div className='detail-header col-6'> Availability: </div>{' '}
-                  <div className='detail col-6'>{availability}</div>
+                  <div className='detail col-6'>
+                    {availability === 'ForSale' ? ' For Sale' : ' For Rent'}
+                  </div>
                 </li>
                 <li className='listing-detail-item col-6 d-flex'>
                   <div className='detail-header col-6'>Type: </div>

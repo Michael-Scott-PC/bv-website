@@ -102,6 +102,7 @@ const PicModal = props => {
           sliderClass=''
           slidesToSlide={1}
           swipeable
+          removeArrowOnDeviceType={'mobile'}
         >
           {props.photos &&
             props.photos.map(photo => (

@@ -579,7 +579,9 @@
               "required": [
                 "id",
                 "username",
-                "email"
+                "email",
+                "first_name",
+                "last_name"
               ],
               "properties": {
                 "id": {
@@ -607,6 +609,12 @@
                   "type": "boolean"
                 },
                 "role": {
+                  "type": "string"
+                },
+                "first_name": {
+                  "type": "string"
+                },
+                "last_name": {
                   "type": "string"
                 }
               }

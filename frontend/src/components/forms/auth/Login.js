@@ -14,6 +14,7 @@ import GoogleAuth from './GoogleAuth';
 import { loginUser, signIn } from '../../../actions/profile';
 
 const Login = ({ style, setshowlogin, loginUser }) => {
+  console.log(loginUser);
   return (
     <Fragment>
       <Formik

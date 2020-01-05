@@ -46,7 +46,7 @@ export const createUser = values => async dispatch => {
 
 export const createGoogleUser = values => async dispatch => {
   try {
-    const res = await axiosStrapi.post('/googleusers', values);
+    const res = await axiosStrapi.post('/google-users', values);
     console.log(res);
 
     dispatch({
@@ -74,10 +74,10 @@ export const createGoogleUser = values => async dispatch => {
 };
 
 export const loginUser = values => async dispatch => {
-  console.log(values);
+  console.log('loginUser values: ', values);
   try {
     const res = await axiosStrapi.post('/auth/local', values);
-
+    console.log(res);
     dispatch({
       type: LOGIN_USER,
       payload: res.data

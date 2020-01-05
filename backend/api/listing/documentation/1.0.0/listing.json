@@ -703,6 +703,7 @@
           },
           "availability": {
             "type": "string",
+            "default": "ForSale",
             "enum": [
               "ForSale",
               "ForRent"
@@ -843,6 +844,7 @@
           },
           "availability": {
             "type": "string",
+            "default": "ForSale",
             "enum": [
               "ForSale",
               "ForRent"

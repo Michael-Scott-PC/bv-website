@@ -69,6 +69,16 @@
   padding: 0;
 }
 
+a.dropdown-item > p:active {
+  color: #00ffff;
+  background-color: rgb(58, 74, 123);
+}
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+  background-color: rgb(58, 74, 123);
+}
+
 .google-logout {
   width: 100%;
   justify-content: center;
@@ -99,8 +109,8 @@
   a.dropdown-item {
     color: #afadad;
   }
-  a.dropdown-item:hover {
+  /* a.dropdown-item:hover {
     color: #ffffff;
     background-color: rgba(0, 0, 0, 0);
-  }
+  } */
 }

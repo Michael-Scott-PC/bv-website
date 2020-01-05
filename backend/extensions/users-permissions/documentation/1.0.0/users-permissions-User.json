@@ -1188,7 +1188,9 @@
         "required": [
           "id",
           "username",
-          "email"
+          "email",
+          "first_name",
+          "last_name"
         ],
         "properties": {
           "id": {
@@ -1244,13 +1246,25 @@
                 }
               }
             }
+          },
+          "first_name": {
+            "type": "string",
+            "maxLength": 30,
+            "minLength": 2
+          },
+          "last_name": {
+            "type": "string",
+            "maxLength": 30,
+            "minLength": 2
           }
         }
       },
       "NewUsers-PermissionsUser": {
         "required": [
           "username",
-          "email"
+          "email",
+          "first_name",
+          "last_name"
         ],
         "properties": {
           "username": {
@@ -1281,6 +1295,16 @@
           },
           "role": {
             "type": "string"
+          },
+          "first_name": {
+            "type": "string",
+            "maxLength": 30,
+            "minLength": 2
+          },
+          "last_name": {
+            "type": "string",
+            "maxLength": 30,
+            "minLength": 2
           }
         }
       }

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "12/23/2019 7:06:45 PM"
+    "x-generation-date": "01/04/2020 10:57:26 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -6245,6 +6245,7 @@
           },
           "availability": {
             "type": "string",
+            "default": "ForSale",
             "enum": [
               "ForSale",
               "ForRent"
@@ -6385,6 +6386,7 @@
           },
           "availability": {
             "type": "string",
+            "default": "ForSale",
             "enum": [
               "ForSale",
               "ForRent"
@@ -6614,7 +6616,9 @@
               "required": [
                 "id",
                 "username",
-                "email"
+                "email",
+                "first_name",
+                "last_name"
               ],
               "properties": {
                 "id": {
@@ -6642,6 +6646,12 @@
                   "type": "boolean"
                 },
                 "role": {
+                  "type": "string"
+                },
+                "first_name": {
+                  "type": "string"
+                },
+                "last_name": {
                   "type": "string"
                 }
               }
@@ -6682,7 +6692,9 @@
         "required": [
           "id",
           "username",
-          "email"
+          "email",
+          "first_name",
+          "last_name"
         ],
         "properties": {
           "id": {
@@ -6738,13 +6750,25 @@
                 }
               }
             }
+          },
+          "first_name": {
+            "type": "string",
+            "maxLength": 30,
+            "minLength": 2
+          },
+          "last_name": {
+            "type": "string",
+            "maxLength": 30,
+            "minLength": 2
           }
         }
       },
       "NewUsers-PermissionsUser": {
         "required": [
           "username",
-          "email"
+          "email",
+          "first_name",
+          "last_name"
         ],
         "properties": {
           "username": {
@@ -6775,6 +6799,16 @@
           },
           "role": {
             "type": "string"
+          },
+          "first_name": {
+            "type": "string",
+            "maxLength": 30,
+            "minLength": 2
+          },
+          "last_name": {
+            "type": "string",
+            "maxLength": 30,
+            "minLength": 2
           }
         }
       },
