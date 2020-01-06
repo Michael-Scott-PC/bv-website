@@ -1,16 +1,15 @@
-// const express = require('express');
-// // const path = require('path');
+const express = require('express');
+const path = require('path');
 
-// const app = express();
+const app = express();
 
-// // Init Middleware
-// app.use(express.json({ extended: true }));
+// Init Middleware
+app.use(express.json({ extended: true }));
 
-// // Define route
-// app.use('/api/calculator', require('./routes/api/calculator'));
-// // app.use('/api/news', require('./routes/api/news'));
+// Define route
+app.use('/api/calculator', require('./routes/api/calculator'));
 
-// // Serve static assets in production
+// Serve static assets in production
 // if (process.env.NODE_ENV === 'production') {
 //   // Set static folder
 //   app.use(express.static('../frontend/build'));
@@ -20,6 +19,6 @@
 //   });
 // }
 
-// const PORT = process.env.PORT || 5000;
+const PORT = process.env.SECOND_SERVER_PORT || 5001;
 
-// app.listen(PORT, () => console.log(`server started on port ${PORT}`));
+app.listen(PORT, () => console.log(`server started on port ${PORT}`));

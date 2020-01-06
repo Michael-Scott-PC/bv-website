@@ -49,6 +49,9 @@ export const createGoogleUser = values => async dispatch => {
     const res = await axiosStrapi.post('/google-users', values);
     console.log(res);
 
+    // TODO check if the google user already exists,
+    // right now it's just registering every time
+
     dispatch({
       type: CREATE_GOOGLE_USER,
       payload: res.data

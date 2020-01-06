@@ -1,4 +1,6 @@
 {
+  "connection": "default",
+  "collectionName": "google_users",
   "info": {
     "name": "Google User"
   },
@@ -16,9 +18,8 @@
       "required": false
     },
     "email": {
-      "type": "email"
+      "type": "email",
+      "unique": true
     }
-  },
-  "connection": "default",
-  "collectionName": "google_users"
+  }
 }
