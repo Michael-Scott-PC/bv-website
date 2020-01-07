@@ -31,11 +31,12 @@ const MortgageCalculator = () => {
 
   // error validation for calculator
   const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Set the current rate and APR values returned from Zillow API
   const [currentRate, setCurrentRate] = useState(0);
   const [currentApr, setCurrentApr] = useState(0);
+
+  const [isDisabled, setIsDisabled] = useState(true);
 
   const getCurrentRates = async () => {
     try {
@@ -79,16 +80,18 @@ const MortgageCalculator = () => {
     }
     // console.log('useEffect ran.');
     setErrors(validateCalculator(propertyValue, loanAmount, zipcode));
+    console.log('setErrors ran.');
+    if (Object.keys(errors).length === 0) {
+      setIsDisabled(false);
+    } else {
+      setIsDisabled(true);
+    }
   }, [program, propertyValue, loanAmount, zipcode]);
 
   const onFormSubmit = e => {
     e.preventDefault();
 
-    setIsSubmitting(true);
-    if (Object.keys(errors).length === 0 && isSubmitting) {
-      getCurrentRates();
-      console.log('errors object empty. getCurrentRates ran.');
-    }
+    getCurrentRates();
   };
 
   return (
@@ -334,7 +337,11 @@ const MortgageCalculator = () => {
             </div>
             <div className='row'>
               <div className='col'>
-                <button type='submit' href='!#' className='calculate btn my-4'>
+                <button
+                  type='submit'
+                  className='calculate btn my-4'
+                  disabled={isDisabled}
+                >
                   Calculate
                 </button>
               </div>

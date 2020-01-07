@@ -1,7 +1,6 @@
 require('dotenv').config({ path: require('find-config')('.env') });
 const express = require('express');
 const router = express.Router();
-// const config = require('config');
 const request = require('request');
 const { check, validationResult } = require('express-validator');
 const { nested_encoder } = require('../../utils/nested_encoder');
