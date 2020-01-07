@@ -1,6 +1,7 @@
+require('dotenv').config({ path: require('find-config')('.env') });
 const express = require('express');
 const router = express.Router();
-const config = require('config');
+// const config = require('config');
 const request = require('request');
 const { check, validationResult } = require('express-validator');
 const { nested_encoder } = require('../../utils/nested_encoder');
@@ -12,7 +13,7 @@ router.get('/', async (req, res) => {
   // TODO put in form data checks on the backend w/ express validator
 
   const params = {
-    partnerId: config.get('partnerId'),
+    partnerId: process.env.PARTNER_ID,
     queries: {
       stateAbbreviation: req.query.stateAbbr,
       program: req.query.program,
