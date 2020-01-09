@@ -12,6 +12,12 @@
   grid-template-rows: auto;
   align-items: center;
   background-color: #3a4a7b;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+div#navbarToggleExternalContent {
+  margin-right: 0;
 }
 
 .collapse {

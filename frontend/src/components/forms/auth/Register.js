@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Form, Row, Col, Button } from 'react-bootstrap';
 import { Formik } from 'formik';
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 import { createUser } from '../../../actions/profile';
 import RegisterSchema from '../schemas/registerSchema';
@@ -199,6 +199,8 @@ const Register = ({ createUser, style, setshowregister, check }) => {
   );
 };
 
-// Register.propTypes = {}
+Register.propTypes = {
+  createUser: PropTypes.func.isRequired
+};
 
 export default connect(null, { createUser })(Register);

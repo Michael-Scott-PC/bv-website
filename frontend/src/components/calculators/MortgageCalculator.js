@@ -53,7 +53,6 @@ const MortgageCalculator = () => {
           zipcode
         }
       });
-      console.log(res);
       setCurrentRate(res.data.rates[1].rate);
       setCurrentApr(res.data.rates[1].apr);
     } catch (error) {
@@ -78,9 +77,7 @@ const MortgageCalculator = () => {
       setProgram('ARM5');
       setLoanType('Conventional');
     }
-    // console.log('useEffect ran.');
     setErrors(validateCalculator(propertyValue, loanAmount, zipcode));
-    console.log('setErrors ran.');
     if (Object.keys(errors).length === 0) {
       setIsDisabled(false);
     } else {
@@ -99,7 +96,7 @@ const MortgageCalculator = () => {
       <div className='mortgage-calculator col-12 col-lg-7 py-5'>
         <div className='mortgage card text-center'>
           <div className='calculator card-title mt-4'>
-            <h3>Mortgage Rate Calculator</h3>
+            <h3>Mortgage Calculator</h3>
           </div>
           <form onSubmit={onFormSubmit} noValidate>
             <div className='row mx-2 mb-3'>

@@ -10,7 +10,6 @@ const NewsEvents = ({
   listingReducer: { allListings, loading }
 }) => {
   const renderTwitterFeed = () => {
-    console.log('renderTwitterFeed ran.');
     return (
       <div className='twitter-embed'>
         <a
@@ -28,14 +27,12 @@ const NewsEvents = ({
 
   useEffect(() => {
     getAllListings();
-    // renderTwitterFeed();
     const script = document.createElement('script');
     script.src = 'https://platform.twitter.com/widgets.js';
     document.getElementsByClassName('twitter-embed')[0].appendChild(script);
   }, [getAllListings]);
 
   const renderOpenHouses = i => {
-    console.log('renderOpenHouses ran.');
     const jsx = [<h1 className='ml-4 mt-5 col-12'>Upcoming Open Houses</h1>];
     for (i = 0; i < allListings.length; i++) {
       if (allListings[i].open_house) {
@@ -80,7 +77,6 @@ const NewsEvents = ({
 
   return (
     <div className='container-fluid mb-5'>
-      {/* <h1 className='ml-4 mt-5'>Upcoming Open Houses</h1> */}
       <div className='row'>
         <div className='col-lg-6'>{renderOpenHouses()}</div>
         <br />

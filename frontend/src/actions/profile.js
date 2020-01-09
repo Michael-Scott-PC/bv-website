@@ -15,10 +15,8 @@ import { setAlert } from './alert';
 import history from '../history';
 
 export const createUser = values => async dispatch => {
-  console.log(values);
   try {
     const res = await axiosStrapi.post('/auth/local/register', values);
-    console.log(res);
 
     dispatch({
       type: CREATE_USER,
@@ -47,7 +45,6 @@ export const createUser = values => async dispatch => {
 export const createGoogleUser = values => async dispatch => {
   try {
     const res = await axiosStrapi.post('/google-users', values);
-    console.log(res);
 
     // TODO check if the google user already exists,
     // right now it's just registering every time
@@ -77,10 +74,9 @@ export const createGoogleUser = values => async dispatch => {
 };
 
 export const loginUser = values => async dispatch => {
-  console.log('loginUser values: ', values);
   try {
     const res = await axiosStrapi.post('/auth/local', values);
-    console.log(res);
+
     dispatch({
       type: LOGIN_USER,
       payload: res.data

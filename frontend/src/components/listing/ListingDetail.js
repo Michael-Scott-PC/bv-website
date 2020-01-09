@@ -2,7 +2,6 @@ import './ListingDetail.css';
 import 'react-multi-carousel/lib/styles.css';
 import React, { Fragment, useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-// import { Link } from 'react-router-dom';
 import NumberFormat from 'react-number-format';
 import Carousel from 'react-multi-carousel';
 import PropTypes from 'prop-types';

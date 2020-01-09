@@ -8,13 +8,9 @@ import PropTypes from 'prop-types';
 import LoginSchema from '../schemas/loginSchema';
 import GoogleAuth from './GoogleAuth';
 
-// import Google from '../../../img/google/google2x.png';
-// import Goog from '../../../img/google/goog2x.png';
-
 import { loginUser, signIn } from '../../../actions/profile';
 
 const Login = ({ style, setshowlogin, loginUser }) => {
-  console.log(loginUser);
   return (
     <Fragment>
       <Formik

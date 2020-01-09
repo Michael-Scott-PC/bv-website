@@ -1,11 +1,9 @@
 import './Testimonials.css';
 import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
-// import Markdown from 'markdown-to-jsx';
 import Carousel from 'react-bootstrap/Carousel';
 import { connect } from 'react-redux';
 import { getTestimonials } from '../../actions/testimonial';
-// import { render } from 'react-dom';
 
 const Testimonials = ({
   getTestimonials,
@@ -14,8 +12,6 @@ const Testimonials = ({
   useEffect(() => {
     getTestimonials();
   }, [getTestimonials]);
-
-  // console.log(testimonials);
 
   return (
     <Fragment>

@@ -8,7 +8,6 @@ import PropTypes from 'prop-types';
 
 import AuthModal from '../forms/auth/AuthModal';
 import { logout } from '../../actions/profile';
-// import history from '../../history';
 
 const Navbar = ({ authReducer: { loading, user, googleUser }, logout }) => {
   const [bar1, setBar1] = useState(false);
@@ -35,7 +34,6 @@ const Navbar = ({ authReducer: { loading, user, googleUser }, logout }) => {
   };
 
   const renderAuthenticatedNav = () => {
-    console.log('renderAuthenticatedNav ran - line 14.');
     if (user.jwt) {
       return (
         <Fragment>
@@ -64,14 +62,6 @@ const Navbar = ({ authReducer: { loading, user, googleUser }, logout }) => {
       );
     }
   };
-
-  const check = () => {
-    console.log(loading);
-    console.log(user);
-    console.log(googleUser);
-  };
-
-  // const [showAuthModal, setShowAuthModal] = useState(false);
 
   return (
     <Fragment>
@@ -156,16 +146,11 @@ const Navbar = ({ authReducer: { loading, user, googleUser }, logout }) => {
           )}
           {!user.jwt && !googleUser.profileObj ? (
             <AuthModal
-              onEnter={check}
               show={showAuthModal}
               onHide={() => setShowAuthModal(false)}
             />
           ) : (
-            <AuthModal
-              onEnter={check}
-              show={!showAuthModal}
-              // onHide={() => setShowAuthModal(false)}
-            />
+            <AuthModal show={!showAuthModal} />
           )}
         </div>
       </div>

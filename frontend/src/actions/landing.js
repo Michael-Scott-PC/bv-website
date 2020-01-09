@@ -1,10 +1,10 @@
-import axios from "../api/axiosStrapi";
-import { GET_LANDING_IMG } from "./types";
+import axios from '../api/axiosStrapi';
+import { GET_LANDING_IMG } from './types';
 
 export const getLandingImage = () => async dispatch => {
   try {
-    const res = await axios.get("/landings");
-    console.log(res);
+    const res = await axios.get('/landings');
+
     dispatch({
       type: GET_LANDING_IMG,
       payload: res.data[0]

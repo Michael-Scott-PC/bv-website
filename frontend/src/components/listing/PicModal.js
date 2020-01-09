@@ -6,7 +6,6 @@ import ModalBody from 'react-bootstrap/ModalBody';
 import Carousel from 'react-multi-carousel';
 
 const PicModal = props => {
-  console.log(props);
   const [current, setCurrent] = useState(``);
 
   const cleanUp = () => {
@@ -140,11 +139,6 @@ const PicModal = props => {
           style={{ marginLeft: '0', marginRight: '0' }}
         >
           <div className='row row-header-desktop'>
-            {/* <div className='col-4 center-modal'>
-              <button className='inquiry btn btn-for-modal ml-2'>
-                Make Inquiry
-              </button>
-            </div> */}
             <div className='col-12' id='custom-close-btn'>
               <Modal.Header closeButton>
                 <h4 className='modal-address mr-2' style={{ color: 'white' }}>

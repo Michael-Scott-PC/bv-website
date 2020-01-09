@@ -2,7 +2,6 @@ require('dotenv').config({ path: require('find-config')('.env') });
 const express = require('express');
 const router = express.Router();
 const request = require('request');
-const { check, validationResult } = require('express-validator');
 const { nested_encoder } = require('../../utils/nested_encoder');
 
 // @route  GET /api/calculator
@@ -58,12 +57,9 @@ router.get('/', async (req, res) => {
     };
 
     request(options, (error, response, body) => {
-      console.log('OPTIONS: ', options);
       if (error) console.log(error);
 
       if (response.statusCode !== 200) {
-        console.log(response.statusCode);
-        console.log(response.statusMessage);
         return res
           .status(response.statusCode)
           .json({ msg: response.statusMessage });
@@ -71,7 +67,6 @@ router.get('/', async (req, res) => {
       res.json(JSON.parse(body));
     });
   } catch (error) {
-    console.log('ERROR.MESSAGE: ' + error.message);
     res.status(500).send('Server Error');
   }
 });

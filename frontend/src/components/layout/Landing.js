@@ -10,8 +10,6 @@ const Landing = ({ getLandingImage, landing: { landing, loading } }) => {
     getLandingImage();
   }, [getLandingImage]);
 
-  console.log(landing);
-
   const renderLandingPhoto = () => {
     if (landing.publish) {
       if (landing.landing_photo) {

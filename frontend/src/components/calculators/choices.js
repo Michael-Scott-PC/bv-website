@@ -54,14 +54,6 @@ export const state_choices = {
   WY: 'WY'
 };
 
-// export const programs = {
-//   '30-Year Fixed': 'Fixed30Year',
-//   '30-Year Fixed FHA': 'Fixed30Year',
-//   '30-Year Fixed VA': 'Fixed30Year',
-//   '15-Year Fixed': 'Fixed15Year',
-//   '5-Year ARM': 'ARM5'
-// };
-
 export const programs = {
   '30-Year Fixed': '30-Year Fixed',
   '30-Year Fixed FHA': '30-Year Fixed FHA',
@@ -75,13 +67,6 @@ export const loanTypes = {
   FHA: 'FHA',
   VA: 'VA'
 };
-
-// export const credit_range = {
-//   default: 'default',
-//   '<680': 'Low',
-//   '680-740': 'High',
-//   '740': 'VeryHigh'
-// };
 
 export const credit_range = {
   'default(=>740)': 'VeryHigh',

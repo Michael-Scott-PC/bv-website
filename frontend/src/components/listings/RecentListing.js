@@ -39,7 +39,7 @@ const RecentListing = ({
     <Fragment>
       <div className='recent-listing col-12 col-lg-6 py-5'>
         <div className='recent-listing card-header text-center mx-3'>
-          <h3>Most Recent Listing</h3>
+          <h3>Welcome Home</h3>
         </div>
         <div className='card recent-listing-card mx-3 text-center'>
           <div className='img-hover-zoom'>

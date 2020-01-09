@@ -16,8 +16,6 @@ const AllListings = ({
     getAllListings();
   }, [getAllListings]);
 
-  console.log(allListings);
-
   return (
     <Fragment>
       <div className='all-listings container py-5'>

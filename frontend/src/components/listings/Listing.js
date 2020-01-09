@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import NumberFormat from 'react-number-format';
 import PropTypes from 'prop-types';
 
-// import { getListing } from '../../actions/listing';
-
 const Listing = ({ listing }) => {
   return (
     <Fragment>

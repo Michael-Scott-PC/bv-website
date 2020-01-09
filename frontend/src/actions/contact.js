@@ -7,7 +7,6 @@ export const createContact = values => async dispatch => {
   try {
     const res = await axiosStrapi.post('/contacts', values);
 
-    console.log(res);
     dispatch({
       type: POST_CONTACT,
       payload: res.data

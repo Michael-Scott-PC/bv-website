@@ -6,7 +6,6 @@ import { Row, Col } from 'react-bootstrap';
 
 import Google from '../../../img/google/google2x.png';
 import Goog from '../../../img/google/goog2x.png';
-// import { GOOGLE_SIGN_IN } from '../../../actions/types';
 import { signIn, logout, createGoogleUser } from '../../../actions/profile';
 
 const GoogleAuth = ({ authReducer, signIn, logout, createGoogleUser }) => {
@@ -18,20 +17,8 @@ const GoogleAuth = ({ authReducer, signIn, logout, createGoogleUser }) => {
       familyName: res.profileObj.familyName
     };
     createGoogleUser(values);
-    console.log(values);
     signIn(res);
   };
-
-  //   const logoutRes = () => {
-  //       logout();
-  //   }
-
-  //   useEffect(() => {
-  //     //   responseGoogle();
-  //     console.log(authReducer);
-  //   })
-
-  //   console.log(authReducer);
 
   return (
     <div>
@@ -77,12 +64,6 @@ const GoogleAuth = ({ authReducer, signIn, logout, createGoogleUser }) => {
         onFailure={responseGoogle}
         cookiePolicy={'single_host_origin'}
       />
-      {/* <GoogleLogout
-                clientId="1093539628095-vcrooulbub3vppi5mc0bglp5gkb41o95.apps.googleusercontent.com"
-                buttonText="Logout"
-                onLogoutSuccess={logoutRes}
-                >
-            </GoogleLogout> */}
     </div>
   );
 };
