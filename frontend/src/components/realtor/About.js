@@ -50,7 +50,7 @@ const About = ({ getBrianInfo, brian: { brian, brian_headshot_url } }) => {
         ) : (
           <div className='card about-card'>
             <div className='row no-gutters'>
-              <div className='col-md-5'>
+              <div className='col-md-5 col-lg-3 offset-lg-1'>
                 <SplitTextStyled>
                   <Controller>
                     <Scene

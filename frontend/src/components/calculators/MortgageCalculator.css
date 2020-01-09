@@ -4,12 +4,17 @@
     background: radial-gradient(ellipse at top, #87ceeb, transparent),
                 radial-gradient(ellipse at bottom, #ffffff, transparent); */
   /* background: radial-gradient(circle at top, #3884a1 10%, #87ceeb 55%, #FFFFFF 100%); */
-  background: radial-gradient(
+  /* background: radial-gradient(
     circle at top,
     rgba(139, 197, 221, 0.25) 20%,
     #addff375 100%,
     #ffffff 100%
-  );
+  ); */
+}
+
+.form-group {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .mortgage.card {

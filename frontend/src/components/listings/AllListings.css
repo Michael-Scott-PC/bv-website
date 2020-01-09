@@ -4,18 +4,22 @@
 } */
 
 .card-img-overlay {
-    position: absolute;
-    top: 0;
-    right: unset;
-    bottom: unset;
-    left: 0;
-    padding: 1.25rem;
+  position: absolute;
+  top: 0;
+  right: unset;
+  bottom: unset;
+  left: 0;
+  padding: 1.25rem;
 }
 
 p.info {
-    color: #000000;
+  color: #000000;
 }
 
 .info {
-    font-size: 1.25em;
+  font-size: 1.25em;
+}
+
+.justify-listings {
+  justify-content: center;
 }

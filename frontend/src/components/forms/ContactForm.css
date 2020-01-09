@@ -1,3 +1,9 @@
 .contact-form-envelope {
-    color: #000000;
+  color: #000000;
+}
+
+@media (min-width: 1000px) {
+  textarea.form-control {
+    height: 30vh;
+  }
 }

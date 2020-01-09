@@ -1,7 +1,8 @@
 .navbar {
   background-color: rgb(58, 74, 123);
   height: 110px;
-  width: 100%;
+  inline-size: max-content;
+  /* width: 100%; */
 }
 
 .link-container {
@@ -64,14 +65,17 @@
   background-color: rgb(58, 74, 123);
   color: #ffffff;
   /*height: 4em;*/
-  font-size: 1.3em;
+  font-size: 1.5em;
   font-weight: bold;
   padding: 0;
 }
 
-a.dropdown-item > p:active {
+.signin-link {
+  font-size: unset;
+}
+
+a.dropdown-item:active {
   color: #00ffff;
-  background-color: rgb(58, 74, 123);
 }
 
 .dropdown-item:focus,
@@ -88,7 +92,37 @@ a.dropdown-item > p:active {
   color: #000000;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 370px) {
+  .navbar {
+    /* inline-size: unset; */
+    width: 100%;
+  }
+}
+
+@media (min-width: 562px) {
+  .link-container {
+    height: 73vh;
+  }
+}
+
+@media (min-width: 1000px) {
+  .row-collapse {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .brian-name-container {
+    background: linear-gradient(rgb(0, 0, 0, 1), rgba(0, 0, 0, 0.4) 100%);
+    height: 15vh;
+  }
+  h1.landscape-brian-name {
+    margin-bottom: 0;
+    color: #00ffff;
+    text-align: center;
+    /* line-height: 2; */
+    width: 100%;
+    /* background: linear-gradient(rgb(0, 0, 0, 1), rgba(0, 0, 0, 0.4) 100%); */
+    align-self: center;
+  }
   .navbar {
     display: none;
   }
@@ -99,18 +133,36 @@ a.dropdown-item > p:active {
     top: 0;
   }
   .dropdown-item {
-    display: inline-block;
-    height: 70px;
     background: none;
   }
-  div#navbarToggleExternalContent {
+  .link-container {
     background: linear-gradient(rgb(0, 0, 0, 1), rgba(0, 0, 0, 0.4) 100%);
+    display: flex;
+    width: 100%;
+    height: 15vh;
   }
   a.dropdown-item {
     color: #afadad;
   }
+
+  .signin-link {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
   /* a.dropdown-item:hover {
     color: #ffffff;
     background-color: rgba(0, 0, 0, 0);
   } */
+  .dropdown-item:focus,
+  .dropdown-item:hover {
+    background: unset;
+    color: #ffffff;
+  }
+
+  .signin-link:focus,
+  .signin-link:hover {
+    background: unset;
+    color: #ffffff;
+  }
 }

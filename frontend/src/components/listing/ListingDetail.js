@@ -104,17 +104,44 @@ const ListingDetail = ({
   return (
     <Fragment>
       <div className='listing-detail'>
+        <div className='nav-background-black'></div>
         <div className='address text-center py-4'>
           <div className='container'>
-            <div className='row'>
+            <div className='row row-address-lg-screen'>
+              {/* show the arrow here on lg screens */}
               <div
                 onClick={() => history.goBack()}
-                className='col-1 fa-angle-left-div'
+                className='col-1 d-none d-lg-block fa-angle-left-div-lg'
               >
-                <i className='fas fa-angle-left'></i>
+                <i
+                  onClick={() => history.goBack()}
+                  className='fas fa-angle-left'
+                ></i>
               </div>
-              <div className='col-10'>
+              {/* show this section on lg> screens */}
+              <div className='col-11 col-lg-5 d-none d-lg-flex offset-1'>
                 <h1 className='address'>{address}</h1>
+                <p className='address'>
+                  <i className='fas fa-map-marker-alt mx-2'></i>
+                  {city}, {state} {zipcode}
+                </p>
+              </div>
+
+              {/* show this section on xs-md screens */}
+              <div className='col-11 col-lg-5 d-lg-none offset-1'>
+                <h1 className='address'>{address}</h1>
+              </div>
+              {/* show the arrow here on xs-md screens */}
+              <div
+                onClick={() => history.goBack()}
+                className='col-1 d-lg-none fa-angle-left-div'
+              >
+                <i
+                  onClick={() => history.goBack()}
+                  className='fas fa-angle-left'
+                ></i>
+              </div>
+              <div className='col-11 col-lg-5 d-lg-none'>
                 <p className='address'>
                   <i className='fas fa-map-marker-alt mr-2'></i>
                   {city}, {state} {zipcode}
@@ -123,14 +150,34 @@ const ListingDetail = ({
             </div>
           </div>
         </div>
-        <img
-          className='img-fluid'
-          src={renderCoverPhoto()}
-          alt={listing.description}
-          onClick={() => {
-            setShow({ showPicModal: true, currentPhoto: renderCoverPhoto() });
-          }}
-        />
+
+        <div className='row row-listing-detail m-lg-4'>
+          <div className='col-lg-6 col-cover-photo'>
+            <img
+              className='img-fluid'
+              src={renderCoverPhoto()}
+              alt={listing.description}
+              onClick={() => {
+                setShow({
+                  showPicModal: true,
+                  currentPhoto: renderCoverPhoto()
+                });
+              }}
+            />
+          </div>
+          <div className='col-lg-5 d-none d-lg-flex'>
+            <iframe
+              className='mb-5 my-lg-5'
+              width='100%'
+              height='auto'
+              frameBorder='0'
+              style={{ border: '0' }}
+              title='google map'
+              src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_MAP}&q=${address}`}
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
         <PicModal
           show={showPicModal.showPicModal}
           currentphoto={showPicModal.currentPhoto}
@@ -145,58 +192,71 @@ const ListingDetail = ({
           <Spinner />
         ) : (
           <Fragment>
-            <Carousel
-              additionalTransfrom={0}
-              arrows
-              centerMode={false}
-              className=''
-              containerClass='container-with-dots'
-              dotListClass=''
-              draggable
-              focusOnSelect={false}
-              infinite
-              itemClass=''
-              keyBoardControl
-              minimumTouchDrag={80}
-              renderButtonGroupOutside={false}
-              renderDotsOutside={false}
-              responsive={responsive}
-              showDots={false}
-              sliderClass=''
-              slidesToSlide={1}
-              swipeable
-            >
-              {photos &&
-                photos.map(photo => (
-                  <img
-                    key={photo.id}
-                    className='img-fluid thumbnail-img'
-                    src={`${process.env.REACT_APP_STRAPIURL}${photo.url}`}
-                    alt='pictures of a property'
-                    onClick={() =>
-                      setShow({
-                        showPicModal: true,
-                        currentPhoto: `${process.env.REACT_APP_STRAPIURL}${photo.url}`
-                      })
-                    }
-                  />
-                ))}
-            </Carousel>
+            <div className='row'>
+              <Carousel
+                additionalTransfrom={0}
+                arrows
+                centerMode={false}
+                className='col-lg-12'
+                containerClass='container-with-dots'
+                dotListClass=''
+                draggable
+                focusOnSelect={false}
+                infinite
+                centerMode
+                itemClass=''
+                keyBoardControl
+                minimumTouchDrag={80}
+                renderButtonGroupOutside={false}
+                renderDotsOutside={false}
+                responsive={responsive}
+                showDots={false}
+                sliderClass=''
+                slidesToSlide={1}
+                swipeable
+              >
+                {photos &&
+                  photos.map(photo => (
+                    <img
+                      key={photo.id}
+                      className='img-fluid thumbnail-img'
+                      src={`${process.env.REACT_APP_STRAPIURL}${photo.url}`}
+                      alt='pictures of a property'
+                      onClick={() =>
+                        setShow({
+                          showPicModal: true,
+                          currentPhoto: `${process.env.REACT_APP_STRAPIURL}${photo.url}`
+                        })
+                      }
+                    />
+                  ))}
+              </Carousel>
+            </div>
+            {/* show this section on xs-md screens */}
             {photos && (
-              <h5 className='total-photos'>Total Photos: {photos.length}</h5>
+              <h5 className='total-photos d-lg-none'>
+                Total Photos: {photos.length}
+              </h5>
+            )}
+            {/* show this section on lg> screens */}
+            {photos && (
+              <h5
+                className='total-photos d-none d-lg-block ml-lg-4'
+                style={{ width: '10%', textAlign: 'center' }}
+              >
+                Total Photos: {photos.length}
+              </h5>
             )}
           </Fragment>
         )}
-        {/* {photos && (
-          <h5 className='total-photos'>Total Photos: {photos.length}</h5>
-        )} */}
+
         <div className='container mt-5'>
           <h1 className='property-details-header text-center mb-3'>
             Property Details
           </h1>
-          <div className='row'>
+          <div className='row row-listing-details-list'>
             <ul className='listing-details-list col-12'>
-              <div className='row'>
+              <div className='row row-listing-detail-item'>
                 <li className='listing-detail-item col-6 d-flex'>
                   <div className='detail-header col-6'> Availability: </div>{' '}
                   <div className='detail col-6'>
@@ -311,7 +371,7 @@ const ListingDetail = ({
           <div className='container description-container text-center mb-5 p-4'>
             <p className='description-paragraph'>{description}</p>
             <button
-              className='inquiry btn'
+              className='inquiry btn col-lg-2'
               onClick={() => setShowInquiryModal(true)}
             >
               Make Inquiry
@@ -323,7 +383,7 @@ const ListingDetail = ({
             />
           </div>
           <iframe
-            className='mb-5'
+            className='mb-5 d-lg-none'
             width='100%'
             height='auto'
             frameBorder='0'
@@ -333,7 +393,10 @@ const ListingDetail = ({
             allowFullScreen
           ></iframe>
           <div className='btn-container text-center'>
-            <button onClick={() => history.goBack()} className='info btn mb-5'>
+            <button
+              onClick={() => history.goBack()}
+              className='info btn mb-5 col-lg-2'
+            >
               Go Back
             </button>
           </div>

@@ -1,3 +1,7 @@
+.container-fluid.mb-5 {
+  overflow-x: hidden;
+}
+
 .open-house-card {
   border-radius: 0;
 }
@@ -10,4 +14,37 @@
 .open-house-info-col {
   padding-left: 0;
   padding-right: 0;
+}
+
+.twitter-embed {
+  text-align: -webkit-center;
+}
+
+@media (min-width: 600px) {
+  .open-house-card {
+    width: 70%;
+    height: auto;
+  }
+}
+
+@media (min-width: 1000px) {
+  /* .open-house-row {
+    height: 25vh;
+  } */
+  .open-house-card {
+    width: 90%;
+    height: auto;
+  }
+  .cover-thumbnail {
+    height: 100% !important;
+  }
+  .card-header {
+    height: 100%;
+  }
+  .open-house-text {
+    font-size: 1.5em;
+  }
+  .twitter-embed {
+    float: right;
+  }
 }

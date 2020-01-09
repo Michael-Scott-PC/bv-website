@@ -36,7 +36,7 @@ const NewsEvents = ({
 
   const renderOpenHouses = i => {
     console.log('renderOpenHouses ran.');
-    const jsx = [];
+    const jsx = [<h1 className='ml-4 mt-5 col-12'>Upcoming Open Houses</h1>];
     for (i = 0; i < allListings.length; i++) {
       if (allListings[i].open_house) {
         jsx.push(
@@ -44,10 +44,10 @@ const NewsEvents = ({
             key={allListings[i].id}
             className='card container-fluid open-house-card my-4'
           >
-            <div className='row'>
-              <div className='col-5 open-house-img-col'>
+            <div className='row open-house-row'>
+              <div className='col-5 col-md-4 open-house-img-col'>
                 <img
-                  className='card-img-top'
+                  className='card-img-top cover-thumbnail'
                   src={`${process.env.REACT_APP_STRAPIURL}${allListings[i].cover_photo.url}`}
                   alt='property for sale'
                   style={{
@@ -57,8 +57,8 @@ const NewsEvents = ({
                   }}
                 />
               </div>
-              <div className='col-7 open-house-info-col'>
-                <div className='card-header'>
+              <div className='col-7 col-md-8 open-house-info-col'>
+                <div className='card-header open-house-text'>
                   {allListings[i].address}
                   <br />
                   {allListings[i].city}, {allListings[i].state}{' '}
@@ -78,26 +78,14 @@ const NewsEvents = ({
     return jsx;
   };
 
-  // const renderTwitterFeed = () => {
-  //   return (
-  //     <a
-  //       className='twitter-timeline'
-  //       data-width='400'
-  //       data-height='800'
-  //       data-theme='light'
-  //       href='https://twitter.com/BrianVRealtor?ref_src=twsrc%5Etfw'
-  //     >
-  //       Tweets by BrianVRealtor
-  //     </a>
-  //   );
-  // };
-
   return (
-    <div className='container-fluid mb-3'>
-      <h1 className='text-center mt-5'>Upcoming Open Houses</h1>
-      {renderOpenHouses()}
-      <br />
-      {renderTwitterFeed()}
+    <div className='container-fluid mb-5'>
+      {/* <h1 className='ml-4 mt-5'>Upcoming Open Houses</h1> */}
+      <div className='row'>
+        <div className='col-lg-6'>{renderOpenHouses()}</div>
+        <br />
+        <div className='col-lg-6'>{renderTwitterFeed()}</div>
+      </div>
     </div>
   );
 };

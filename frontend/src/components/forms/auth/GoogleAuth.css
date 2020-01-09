@@ -1,0 +1,5 @@
+@media (min-width: 1000px) {
+  .g-sign-in-row.my-1.row {
+    justify-content: center;
+  }
+}

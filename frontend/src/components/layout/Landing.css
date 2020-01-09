@@ -1,7 +1,13 @@
 @media (min-width: 576px) {
-    .landing.img-fluid {
-        margin-top: -70px;
-        max-height: 100vh;
-        width: 100%;
-    }
+  .landing.img-fluid {
+    margin-top: -70px;
+    max-height: 100vh;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .landing.img-fluid {
+    margin-top: -140px;
+  }
 }

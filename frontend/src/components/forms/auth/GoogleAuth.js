@@ -1,3 +1,4 @@
+import './GoogleAuth.css';
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { GoogleLogin } from 'react-google-login';
@@ -41,14 +42,14 @@ const GoogleAuth = ({ authReducer, signIn, logout, createGoogleUser }) => {
           <Fragment>
             {/* <h2 className='text-center mt-3'>Or Sign in with Google</h2> */}
             <Row className='my-3'>
-              <Col className='col-8 mx-auto text-center'>
+              <Col className='col-8 col-lg-4  mx-auto text-center'>
                 <button
                   onClick={renderProps.onClick}
                   disabled={renderProps.disabled}
                   className='btn primary'
                 >
                   <Row className='g-sign-in-row my-1'>
-                    <Col className='g-icon-col'>
+                    <Col className='g-icon-col col-lg-4'>
                       <div className='google-icon'>
                         <img
                           src={Google}
@@ -57,7 +58,7 @@ const GoogleAuth = ({ authReducer, signIn, logout, createGoogleUser }) => {
                         />
                       </div>
                     </Col>
-                    <Col className='g-name-col mr-3'>
+                    <Col className='g-name-col mr-3 col-lg-4'>
                       <div className='google-name mr-3'>
                         <img
                           src={Goog}

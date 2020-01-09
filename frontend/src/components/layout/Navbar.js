@@ -75,7 +75,7 @@ const Navbar = ({ authReducer: { loading, user, googleUser }, logout }) => {
 
   return (
     <Fragment>
-      <nav className='navbar navbar-expand-sm sticky-top'>
+      <nav className='navbar navbar-expand-lg sticky-top'>
         <button
           onClick={toggle}
           id='navbar-toggler'
@@ -109,31 +109,37 @@ const Navbar = ({ authReducer: { loading, user, googleUser }, logout }) => {
           alt='detroit skyline outline'
         />
       </nav>
-      <div className='collapse sticky-top' id='navbarToggleExternalContent'>
-        <div className='link-container'>
+      <div
+        className='collapse sticky-top row row-collapse'
+        id='navbarToggleExternalContent'
+      >
+        <div className='brian-name-container d-none d-lg-flex col-lg-2 px-0'>
+          <h1 className='landscape-brian-name ml-5'>Brian Vasquez</h1>
+        </div>
+        <div className='link-container col-12 col-lg-10'>
           <Link to='/' className='dropdown-item' onClick={closeHamburger}>
-            <p>Home</p>
+            Home
           </Link>
           <Link
             to='/browse-listings'
             className='dropdown-item'
             onClick={closeHamburger}
           >
-            <p>Listings</p>
+            Listings
           </Link>
           <Link
             to='/news-events'
             className='dropdown-item'
             onClick={closeHamburger}
           >
-            <p>News &amp; Events</p>
+            News &amp; Events
           </Link>
           <Link
             to='/contacts'
             className='dropdown-item'
             onClick={closeHamburger}
           >
-            <p>Contact</p>
+            Contact
           </Link>
           {!user.jwt && !googleUser.profileObj ? (
             <a
@@ -141,7 +147,9 @@ const Navbar = ({ authReducer: { loading, user, googleUser }, logout }) => {
               className='dropdown-item'
               onClick={() => setShowAuthModal(true)}
             >
-              <p onClick={closeHamburger}>Sign In or Join</p>
+              <p onClick={closeHamburger} className='signin-link'>
+                Sign In or Join
+              </p>
             </a>
           ) : (
             renderAuthenticatedNav()

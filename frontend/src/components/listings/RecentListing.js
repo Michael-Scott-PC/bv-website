@@ -37,7 +37,7 @@ const RecentListing = ({
 
   return (
     <Fragment>
-      <div className='recent-listing col-12 col-md-6 my-5'>
+      <div className='recent-listing col-12 col-lg-6 py-5'>
         <div className='recent-listing card-header text-center mx-3'>
           <h3>Most Recent Listing</h3>
         </div>

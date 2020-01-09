@@ -20,11 +20,11 @@ const AllListings = ({
 
   return (
     <Fragment>
-      <div className='all-listings container'>
+      <div className='all-listings container py-5'>
         <h1 className='all-listings-header text-center my-5'>
           Browse Listings
         </h1>
-        <div className='row'>
+        <div className='row justify-listings'>
           {allListings.length === 0 || loading ? (
             <Spinner />
           ) : (

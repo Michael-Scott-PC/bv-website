@@ -96,7 +96,7 @@ const MortgageCalculator = () => {
 
   return (
     <Fragment>
-      <div className='mortgage-calculator col-12 col-md-6 py-5'>
+      <div className='mortgage-calculator col-12 col-lg-7 py-5'>
         <div className='mortgage card text-center'>
           <div className='calculator card-title mt-4'>
             <h3>Mortgage Rate Calculator</h3>

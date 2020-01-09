@@ -48,7 +48,7 @@ const ContactForm = ({ createContact }) => {
                 </Col>
               </Row>
               <Row>
-                <Col className='col-8 mx-auto text-center'>
+                <Col className='col-8 col-lg-6 mx-auto text-center'>
                   <Form.Group controlId='formGroupFirstName'>
                     <Form.Label>First Name</Form.Label>
                     <Form.Control
@@ -70,7 +70,7 @@ const ContactForm = ({ createContact }) => {
                 </Col>
               </Row>
               <Row>
-                <Col className='col-8 mx-auto text-center'>
+                <Col className='col-8 col-lg-6 mx-auto text-center'>
                   <Form.Group controlId='formGroupLastName'>
                     <Form.Label>Last Name</Form.Label>
                     <Form.Control
@@ -92,7 +92,7 @@ const ContactForm = ({ createContact }) => {
                 </Col>
               </Row>
               <Row>
-                <Col className='col-8 mx-auto text-center'>
+                <Col className='col-8 col-lg-6 mx-auto text-center'>
                   <Form.Group controlId='formGroupEmail'>
                     <Form.Label>Email</Form.Label>
                     <Form.Control
@@ -114,7 +114,7 @@ const ContactForm = ({ createContact }) => {
                 </Col>
               </Row>
               <Row>
-                <Col className='col-8 mx-auto text-center'>
+                <Col className='col-8 col-lg-6 mx-auto text-center'>
                   <Form.Group controlId='formGroupPhoneNumber'>
                     <Form.Label>Phone</Form.Label>
                     <Form.Control
@@ -135,7 +135,7 @@ const ContactForm = ({ createContact }) => {
                 </Col>
               </Row>
               <Row>
-                <Col className='col-8 mb-3 mx-auto text-center'>
+                <Col className='col-8 col-lg-6 mb-3 mx-auto text-center'>
                   <Form.Group controlId='formGroupTextArea'>
                     <Form.Label>How may I help you?</Form.Label>
                     <Form.Control
@@ -155,7 +155,7 @@ const ContactForm = ({ createContact }) => {
                 </Col>
               </Row>
               <Row>
-                <Col className='col-11 col-md-4 mb-3 mx-auto text-center'>
+                <Col className='col-11 col-md-4 col-lg-2 mb-3 mx-auto text-center'>
                   <Button className='mt-4 mb-5 submit-inquiry' type='submit'>
                     Submit
                   </Button>

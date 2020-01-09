@@ -1,10 +1,16 @@
 div.listing-detail {
   /* background-color: rgba(184, 179, 190, 0.5); */
   background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+.fa-angle-left-div-lg {
+  align-self: center;
 }
 
 .fa-angle-left-div {
   align-self: center;
+  top: -20px;
 }
 
 .fas.fa-angle-left {
@@ -104,4 +110,54 @@ p.description-paragraph {
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.45);
   width: fit-content;
+}
+
+@media (min-width: 1000px) {
+  .col-cover-photo {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  .react-multi-carousel-list {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  .detail-header {
+    font-size: 1.5em;
+  }
+  .detail {
+    font-size: 1.5em;
+  }
+  .nav-background-black {
+    background-color: black;
+    width: 100%;
+    height: 15vh;
+    position: absolute;
+    top: 0;
+  }
+  .col-11.col-lg-5.d-none.d-lg-flex.offset-1 {
+    align-items: center;
+  }
+  .row-address-lg-screen {
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .row-listing-detail {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .row-listing-details-list {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .row-listing-detail-item {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .row.row-listing-detail.m-lg-4 {
+    justify-content: space-evenly;
+  }
+  .listing-detail > .row > .react-multi-carousel-list {
+    overflow: unset !important;
+  }
 }
