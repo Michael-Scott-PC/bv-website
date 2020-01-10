@@ -20,6 +20,10 @@
   width: 50%;
 }
 
+img.card-image-top.img-fluid.cover-photo {
+  object-fit: cover;
+}
+
 div.img-hover-zoom {
   overflow: hidden;
 }

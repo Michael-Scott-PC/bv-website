@@ -30,6 +30,7 @@ const FeaturedListings = ({
               <div className='img-hover-zoom'>
                 <img
                   className='card-image-top img-fluid cover-photo'
+                  style={{ width: '100%', maxHeight: '250px' }}
                   src={
                     listing.cover_photo &&
                     `${process.env.REACT_APP_STRAPIURL}${listing.cover_photo.url}`
