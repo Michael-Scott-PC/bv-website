@@ -119,6 +119,10 @@
     },
     "garage": {
       "type": "string"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

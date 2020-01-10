@@ -1,11 +1,11 @@
 import {
-  GET_RECENT_LISTING,
   GET_ALL_LISTINGS,
-  GET_LISTING
+  GET_LISTING,
+  GET_FEATURED_LISTINGS
 } from '../actions/types';
 
 const initialState = {
-  recentListing: {},
+  featuredListings: [],
   listing: {},
   allListings: [],
   loading: true
@@ -15,10 +15,10 @@ export default function(state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
-    case GET_RECENT_LISTING:
+    case GET_FEATURED_LISTINGS:
       return {
         ...state,
-        recentListing: payload,
+        featuredListings: payload,
         loading: false
       };
     case GET_ALL_LISTINGS:

@@ -750,6 +750,10 @@
           },
           "garage": {
             "type": "string"
+          },
+          "featured": {
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -853,6 +857,10 @@
           },
           "garage": {
             "type": "string"
+          },
+          "featured": {
+            "type": "boolean",
+            "default": false
           }
         }
       }
