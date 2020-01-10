@@ -6,6 +6,7 @@ import ModalBody from 'react-bootstrap/ModalBody';
 import Carousel from 'react-multi-carousel';
 
 const PicModal = props => {
+  console.log(props);
   const [current, setCurrent] = useState(``);
 
   const cleanUp = () => {
@@ -16,6 +17,11 @@ const PicModal = props => {
   if (props.currentphoto) {
     document.getElementById('root').classList.add('blur');
   }
+
+  const changeModalsHelper = () => {
+    props.onHide();
+    props.showInquiryMod();
+  };
 
   // this gets passed into our Carousel property
   const responsive = {
@@ -59,7 +65,10 @@ const PicModal = props => {
         <div className='container'>
           <div className='row'>
             <div className='col-4 center-modal'>
-              <button className='inquiry btn btn-for-modal ml-2'>
+              <button
+                onClick={changeModalsHelper}
+                className='inquiry btn btn-for-modal ml-2'
+              >
                 Make Inquiry
               </button>
             </div>
@@ -138,6 +147,23 @@ const PicModal = props => {
           className='container-fluid header-container-desktop'
           style={{ marginLeft: '0', marginRight: '0' }}
         >
+          <div
+            className='col-4 center-modal'
+            style={{
+              position: 'fixed',
+              top: '15%',
+              right: '3%',
+              zIndex: '5000',
+              width: '15%'
+            }}
+          >
+            <button
+              onClick={changeModalsHelper}
+              className='inquiry btn btn-for-modal ml-2'
+            >
+              Make Inquiry
+            </button>
+          </div>
           <div className='row row-header-desktop'>
             <div className='col-12' id='custom-close-btn'>
               <Modal.Header closeButton>

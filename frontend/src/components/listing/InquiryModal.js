@@ -30,6 +30,7 @@ const InquiryModal = ({ inquiryReducer: { sent }, address, show, onHide }) => {
       aria-labelledby='contained-modal-title-vcenter'
       centered
       onExit={cleanUp}
+      style={{ zIndex: '5000' }}
     >
       <ModalHeader className='inquiry-modal-header' closeButton>
         <br />

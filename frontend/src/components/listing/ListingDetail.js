@@ -186,6 +186,7 @@ const ListingDetail = ({
           state={state}
           zipcode={zipcode}
           onHide={() => setShow(false)}
+          showInquiryMod={() => setShowInquiryModal(true)}
         />
         {!photos ? (
           <Spinner />
