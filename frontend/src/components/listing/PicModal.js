@@ -151,7 +151,7 @@ const PicModal = props => {
             className='col-4 center-modal'
             style={{
               position: 'fixed',
-              top: '15%',
+              top: '25%',
               right: '3%',
               zIndex: '5000',
               width: '15%'
