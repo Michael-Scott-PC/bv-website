@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "01/04/2020 10:57:26 PM"
+    "x-generation-date": "01/09/2020 8:40:22 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -6061,7 +6061,6 @@
           "id",
           "bathrooms",
           "bedrooms",
-          "garage",
           "price",
           "city",
           "zipcode",
@@ -6080,9 +6079,6 @@
           },
           "bedrooms": {
             "type": "integer"
-          },
-          "garage": {
-            "type": "number"
           },
           "price": {
             "type": "integer"
@@ -6293,6 +6289,9 @@
           },
           "state": {
             "type": "string"
+          },
+          "garage": {
+            "type": "string"
           }
         }
       },
@@ -6300,7 +6299,6 @@
         "required": [
           "bathrooms",
           "bedrooms",
-          "garage",
           "price",
           "city",
           "zipcode",
@@ -6316,9 +6314,6 @@
           },
           "bedrooms": {
             "type": "integer"
-          },
-          "garage": {
-            "type": "number"
           },
           "price": {
             "type": "integer"
@@ -6396,6 +6391,9 @@
             "type": "string"
           },
           "state": {
+            "type": "string"
+          },
+          "garage": {
             "type": "string"
           }
         }

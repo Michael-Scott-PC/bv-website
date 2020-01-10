@@ -22,11 +22,6 @@
       "max": 50,
       "required": true
     },
-    "garage": {
-      "type": "decimal",
-      "max": 20,
-      "required": true
-    },
     "price": {
       "type": "biginteger",
       "required": true
@@ -121,6 +116,9 @@
     "state": {
       "type": "string",
       "required": true
+    },
+    "garage": {
+      "type": "string"
     }
   }
 }

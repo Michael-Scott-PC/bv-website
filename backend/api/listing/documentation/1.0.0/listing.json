@@ -519,7 +519,6 @@
           "id",
           "bathrooms",
           "bedrooms",
-          "garage",
           "price",
           "city",
           "zipcode",
@@ -538,9 +537,6 @@
           },
           "bedrooms": {
             "type": "integer"
-          },
-          "garage": {
-            "type": "number"
           },
           "price": {
             "type": "integer"
@@ -751,6 +747,9 @@
           },
           "state": {
             "type": "string"
+          },
+          "garage": {
+            "type": "string"
           }
         }
       },
@@ -758,7 +757,6 @@
         "required": [
           "bathrooms",
           "bedrooms",
-          "garage",
           "price",
           "city",
           "zipcode",
@@ -774,9 +772,6 @@
           },
           "bedrooms": {
             "type": "integer"
-          },
-          "garage": {
-            "type": "number"
           },
           "price": {
             "type": "integer"
@@ -854,6 +849,9 @@
             "type": "string"
           },
           "state": {
+            "type": "string"
+          },
+          "garage": {
             "type": "string"
           }
         }
