@@ -1,7 +1,16 @@
-import { CREATE_USER, ERROR_CREATE_USER, LOGIN_USER, ERROR_LOGIN, LOGOUT, GOOGLE_SIGN_IN } from '../actions/types';
+import {
+  CREATE_USER,
+  ERROR_CREATE_USER,
+  LOGIN_USER,
+  ERROR_LOGIN,
+  LOGOUT,
+  GOOGLE_SIGN_IN,
+  AUTH_ERROR,
+  USER_LOADED
+} from '../actions/types';
 
 const initialState = {
-  jwt: null,
+  token: localStorage.getItem('token'),
   user: {},
   googleUser: {},
   confirmed: false,
@@ -13,11 +22,18 @@ export default function(state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
-    case CREATE_USER:
-    case LOGIN_USER:
+    case USER_LOADED:
       return {
         ...state,
-        jwt: payload.jwt,
+        confirmed: true,
+        loading: false,
+        user: payload
+      };
+    case CREATE_USER:
+    case LOGIN_USER:
+      localStorage.setItem('token', payload.jwt);
+      return {
+        ...state,
         user: payload,
         confirmed: payload.user.confirmed,
         loading: false
@@ -26,7 +42,7 @@ export default function(state = initialState, action) {
       return {
         ...state,
         googleUser: payload
-      }
+      };
     case ERROR_CREATE_USER:
     case ERROR_LOGIN:
       return {
@@ -35,13 +51,15 @@ export default function(state = initialState, action) {
         loading: false
       };
     case LOGOUT:
+    case AUTH_ERROR:
+      localStorage.removeItem('token');
       return {
-        jwt: null,
+        token: null,
         user: {},
         googleUser: {},
         confirmed: false,
         loading: false
-      }
+      };
     default:
       return state;
   }

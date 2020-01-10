@@ -8,8 +8,11 @@ import PropTypes from 'prop-types';
 
 import AuthModal from '../forms/auth/AuthModal';
 import { logout } from '../../actions/profile';
+import authReducer from '../../reducers/authReducer';
 
 const Navbar = ({ authReducer: { loading, user, googleUser }, logout }) => {
+  console.log(user);
+  console.log(user.first_name);
   const [bar1, setBar1] = useState(false);
   const [bar2, setBar2] = useState(false);
   const [bar3, setBar3] = useState(false);
@@ -34,11 +37,11 @@ const Navbar = ({ authReducer: { loading, user, googleUser }, logout }) => {
   };
 
   const renderAuthenticatedNav = () => {
-    if (user.jwt) {
+    if (user && user.confirmed) {
       return (
         <Fragment>
           <a href='#!' className='dropdown-item pt-4'>
-            Welcome, {user.user.first_name}
+            Welcome, {user.first_name}
           </a>
           <a href='#!' className='dropdown-item pt-4' onClick={logoutRes}>
             Sign Out
@@ -131,7 +134,7 @@ const Navbar = ({ authReducer: { loading, user, googleUser }, logout }) => {
           >
             Contact
           </Link>
-          {!user.jwt && !googleUser.profileObj ? (
+          {!user.confirmed && !googleUser.profileObj ? (
             <a
               href='#!'
               className='dropdown-item'
@@ -144,13 +147,19 @@ const Navbar = ({ authReducer: { loading, user, googleUser }, logout }) => {
           ) : (
             renderAuthenticatedNav()
           )}
-          {!user.jwt && !googleUser.profileObj ? (
+
+          {/* <AuthModal
+            show={showAuthModal}
+            onHide={() => setShowAuthModal(false)}
+          /> */}
+
+          {!user.confirmed && !googleUser.profileObj ? (
             <AuthModal
               show={showAuthModal}
               onHide={() => setShowAuthModal(false)}
             />
           ) : (
-            <AuthModal show={!showAuthModal} />
+            <AuthModal show={false} />
           )}
         </div>
       </div>

@@ -63,11 +63,7 @@ const AuthModal = props => {
           </Col>
         </Row>
         <Login style={showLogin} setshowlogin={setShowLogin} />
-        <Register
-          check={props.onEnter}
-          style={showRegister}
-          setshowregister={setShowRegister}
-        />
+        <Register style={showRegister} setshowregister={setShowRegister} />
       </Modal.Body>
     </Modal>
   );

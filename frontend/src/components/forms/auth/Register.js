@@ -10,7 +10,7 @@ import RegisterSchema from '../schemas/registerSchema';
 
 import GoogleAuth from './GoogleAuth';
 
-const Register = ({ createUser, style, setshowregister, check }) => {
+const Register = ({ createUser, style, setshowregister }) => {
   return (
     <Fragment>
       <Formik
@@ -19,7 +19,7 @@ const Register = ({ createUser, style, setshowregister, check }) => {
           setTimeout(() => {
             createUser(values);
             setSubmitting(false);
-            check();
+            // check();
             // resetForm(true);
           }, 400);
         }}

@@ -7,13 +7,39 @@ import {
   ERROR_LOGIN,
   LOGOUT,
   GOOGLE_SIGN_IN,
-  SIGN_OUT
+  AUTH_ERROR,
+  USER_LOADED
 } from './types';
 import axiosStrapi from '../api/axiosStrapi';
+
+import setAuthToken from '../utils/setAuthToken';
 
 import { setAlert } from './alert';
 import history from '../history';
 
+// Load User
+export const loadUser = () => async dispatch => {
+  const token = localStorage.token;
+
+  try {
+    const res = await axiosStrapi.get('/users/me', {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+
+    dispatch({
+      type: USER_LOADED,
+      payload: res.data
+    });
+  } catch (error) {
+    dispatch({
+      type: AUTH_ERROR
+    });
+  }
+};
+
+// Register user
 export const createUser = values => async dispatch => {
   try {
     const res = await axiosStrapi.post('/auth/local/register', values);
@@ -83,7 +109,7 @@ export const loginUser = values => async dispatch => {
     });
 
     dispatch(setAlert('You have successfully logged in.', 'success'));
-
+    dispatch(loadUser());
     // history.push('/');
   } catch (err) {
     console.log(err.response);
@@ -119,11 +145,5 @@ export const signIn = res => {
   return {
     type: GOOGLE_SIGN_IN,
     payload: res
-  };
-};
-
-export const signOut = () => {
-  return {
-    type: SIGN_OUT
   };
 };

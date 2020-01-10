@@ -20,6 +20,5 @@ export const LOGIN_USER = 'LOGIN_USER';
 export const ERROR_LOGIN = 'ERROR_LOGIN';
 export const LOGOUT = 'LOGOUT';
 export const GOOGLE_SIGN_IN = 'GOOGLE_SIGN_IN';
-export const SIGN_OUT = 'SIGN_OUT';
 export const USER_LOADED = 'USER_LOADED';
 export const AUTH_ERROR = 'AUTH_ERROR';
