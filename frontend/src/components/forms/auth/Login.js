@@ -71,7 +71,7 @@ const Login = ({ style, setshowlogin, loginUser, authReducer }) => {
                   <Form.Group controlId='formGroupPassword'>
                     <Form.Label>Password</Form.Label>
                     <Form.Control
-                      type='text'
+                      type='password'
                       name='password'
                       placeholder='enter password'
                       className='text-center'
