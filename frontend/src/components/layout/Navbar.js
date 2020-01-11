@@ -8,7 +8,6 @@ import PropTypes from 'prop-types';
 
 import AuthModal from '../forms/auth/AuthModal';
 import { logout } from '../../actions/profile';
-import authReducer from '../../reducers/authReducer';
 
 const Navbar = ({ authReducer: { loading, user, googleUser }, logout }) => {
   const [bar1, setBar1] = useState(false);
@@ -94,18 +93,22 @@ const Navbar = ({ authReducer: { loading, user, googleUser }, logout }) => {
             }
           ></div>
         </button>
-        <img
-          className='skyline mx-auto'
-          src={skyline}
-          alt='detroit skyline outline'
-        />
+        <Link to='/' className='skyline mx-auto'>
+          <img
+            className='skyline mx-auto'
+            src={skyline}
+            alt='detroit skyline outline'
+          />
+        </Link>
       </nav>
       <div
         className='collapse sticky-top row row-collapse'
         id='navbarToggleExternalContent'
       >
         <div className='brian-name-container d-none d-lg-flex col-lg-2 px-0'>
-          <h1 className='landscape-brian-name ml-5'>Brian Vasquez</h1>
+          <Link to='/'>
+            <h1 className='landscape-brian-name ml-4 mt-4'>Brian Vasquez</h1>
+          </Link>
         </div>
         <div className='link-container col-12 col-lg-10'>
           <Link to='/' className='dropdown-item' onClick={closeHamburger}>

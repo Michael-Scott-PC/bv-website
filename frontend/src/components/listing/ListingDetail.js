@@ -196,7 +196,6 @@ const ListingDetail = ({
               <Carousel
                 additionalTransfrom={0}
                 arrows
-                centerMode={false}
                 className='col-lg-12'
                 containerClass='container-with-dots'
                 dotListClass=''
@@ -343,20 +342,21 @@ const ListingDetail = ({
                 <li className='listing-detail-item col-12 d-flex'>
                   <div className='detail-header col-4'>List Date: </div>
                   <div className='detail col-8'>
-                    {moment(list_date).format('MM-DD-YYYY')}
+                    {list_date && moment(list_date).format('MM-DD-YYYY')}
                   </div>
                 </li>
                 <li className='listing-detail-item col-12 d-flex'>
                   <div className='detail-header col-4'>Next Open House: </div>
                   <div className='detail col-8'>
-                    {moment(open_house).format('MM-DD-YYYY')}{' '}
+                    {open_house && moment(open_house).format('MM-DD-YYYY')}{' '}
                   </div>
                 </li>
                 <li className='listing-detail-item col-12 d-flex'>
                   <div className='detail-header col-4'>Open House Time: </div>
                   <div className='detail col-8'>
-                    {moment(open_house).format('h:mma')} -{' '}
-                    {moment(open_house_end_time).format('h:mma')}
+                    {open_house && moment(open_house).format('h:mma') - ' '}
+                    {open_house_end_time &&
+                      moment(open_house_end_time).format('h:mma')}
                   </div>
                 </li>
                 <li className='listing-detail-item col-12 d-flex'>
