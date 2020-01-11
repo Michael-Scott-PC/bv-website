@@ -6,7 +6,6 @@ import ModalBody from 'react-bootstrap/ModalBody';
 import Carousel from 'react-multi-carousel';
 
 const PicModal = props => {
-  console.log(props);
   const [current, setCurrent] = useState(``);
 
   const cleanUp = () => {

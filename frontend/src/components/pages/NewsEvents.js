@@ -34,8 +34,6 @@ const NewsEvents = ({
 
   const renderOpenHouses = i => {
     const now = new Date();
-    console.log(now);
-    console.log(typeof now);
     const jsx = [
       <h1 key={'open-house-header'} className='ml-4 mt-5 col-12'>
         Upcoming Open Houses
@@ -43,8 +41,6 @@ const NewsEvents = ({
     ];
     for (i = 0; i < allListings.length; i++) {
       if (allListings[i].open_house) {
-        console.log(allListings[i].open_house);
-        console.log(typeof allListings[i].open_house);
         const converted_date = new Date(allListings[i].open_house);
         if (converted_date > now) {
           jsx.push(

@@ -12,7 +12,7 @@ import {
 } from './types';
 import axiosStrapi from '../api/axiosStrapi';
 
-import setAuthToken from '../utils/setAuthToken';
+// import setAuthToken from '../utils/setAuthToken';
 
 import { setAlert } from './alert';
 import history from '../history';
