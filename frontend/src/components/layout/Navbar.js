@@ -38,10 +38,10 @@ const Navbar = ({ authReducer: { loading, user, googleUser }, logout }) => {
     if (user && user.confirmed) {
       return (
         <Fragment>
-          <a href='#!' className='dropdown-item pt-4'>
+          <a href='#!' className='dropdown-item'>
             Welcome, {user.first_name}
           </a>
-          <a href='#!' className='dropdown-item pt-4' onClick={logoutRes}>
+          <a href='#!' className='dropdown-item' onClick={logoutRes}>
             Sign Out
           </a>
         </Fragment>
@@ -145,11 +145,6 @@ const Navbar = ({ authReducer: { loading, user, googleUser }, logout }) => {
           ) : (
             renderAuthenticatedNav()
           )}
-
-          {/* <AuthModal
-            show={showAuthModal}
-            onHide={() => setShowAuthModal(false)}
-          /> */}
 
           {!user.confirmed && !googleUser.profileObj ? (
             <AuthModal
