@@ -22,7 +22,10 @@ const FeaturedListings = ({
       ) : (
         featuredListings &&
         featuredListings.map(listing => (
-          <div key={listing.id} className='recent-listing col-12 col-lg-6 py-5'>
+          <div
+            key={listing.id}
+            className='recent-listing col-12 col-lg-6 py-5 mx-auto'
+          >
             <div className='recent-listing card-header text-center mx-3'>
               <h3>Welcome Home</h3>
             </div>
