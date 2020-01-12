@@ -48,3 +48,13 @@ img.cover-photo:hover {
 .badge-price {
   background-color: #3ed43f;
 }
+
+@media (min-width: 1000px) {
+  .listing-title {
+    font-size: 1.15em;
+    letter-spacing: 1px;
+  }
+  .listing-info {
+    font-size: 1em;
+  }
+}

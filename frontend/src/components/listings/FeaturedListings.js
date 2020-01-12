@@ -65,7 +65,7 @@ const FeaturedListings = ({
                   {listing.bathrooms}
                 </p>
                 <p className='info featured-listing-info'>
-                  <i className='fas fa-bed mr-2'></i> Bedroom:{' '}
+                  <i className='fas fa-bed mr-2'></i> Bedrooms:{' '}
                   {listing.bedrooms}
                 </p>
                 <Link to={`/listing/${listing.id}`} className='info btn mt-3'>

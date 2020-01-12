@@ -9,8 +9,18 @@
   text-align: -webkit-center;
 }
 
+.rec-listings.mortg-calc.container-fluid {
+  background-color: #def0f8;
+}
+
 .recent-listing-parent {
   text-align: center;
   text-align: -webkit-center;
   background-color: #def0f8;
+}
+
+@media (min-width: 1000px) {
+  .recent-listing-parent.col-12.col-md-6.py-5 {
+    margin: auto;
+  }
 }
