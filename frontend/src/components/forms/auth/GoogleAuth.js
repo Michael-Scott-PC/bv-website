@@ -6,10 +6,20 @@ import { Row, Col } from 'react-bootstrap';
 
 import Google from '../../../img/google/google2x.png';
 import Goog from '../../../img/google/goog2x.png';
-import { signIn, logout, createGoogleUser } from '../../../actions/profile';
+import {
+  googleSignIn,
+  logout,
+  createGoogleUser
+} from '../../../actions/profile';
 
-const GoogleAuth = ({ authReducer, signIn, logout, createGoogleUser }) => {
+const GoogleAuth = ({
+  authReducer,
+  googleSignIn,
+  logout,
+  createGoogleUser
+}) => {
   const responseGoogle = response => {
+    console.log(response);
     const res = response;
     const values = {
       email: res.profileObj.email,
@@ -17,8 +27,10 @@ const GoogleAuth = ({ authReducer, signIn, logout, createGoogleUser }) => {
       familyName: res.profileObj.familyName
     };
     createGoogleUser(values);
-    signIn(res);
+    googleSignIn(res);
   };
+
+  console.log(authReducer);
 
   return (
     <div>
@@ -72,6 +84,8 @@ const mapStateToProps = state => ({
   authReducer: state.authReducer
 });
 
-export default connect(mapStateToProps, { signIn, logout, createGoogleUser })(
-  GoogleAuth
-);
+export default connect(mapStateToProps, {
+  googleSignIn,
+  logout,
+  createGoogleUser
+})(GoogleAuth);

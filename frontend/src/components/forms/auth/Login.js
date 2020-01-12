@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import LoginSchema from '../schemas/loginSchema';
 // import GoogleAuth from './GoogleAuth';
 
-import { loginUser, googleSignIn } from '../../../actions/profile';
+import { loginUser } from '../../../actions/profile';
 
 const Login = ({ style, setshowlogin, loginUser, authReducer }) => {
   return (
