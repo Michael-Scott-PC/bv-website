@@ -119,15 +119,16 @@ a.dropdown-item:active {
   .brian-name-container {
     background: linear-gradient(rgb(0, 0, 0, 1), rgba(0, 0, 0, 0.4) 100%);
     height: 15vh;
+    justify-content: center;
+    align-items: center;
   }
   h1.landscape-brian-name {
     margin-bottom: 0;
     color: #00ffff;
     text-align: center;
-    /* line-height: 2; */
     width: 100%;
-    /* background: linear-gradient(rgb(0, 0, 0, 1), rgba(0, 0, 0, 0.4) 100%); */
     align-self: center;
+    font-size: 1.75em;
   }
   .navbar {
     display: none;

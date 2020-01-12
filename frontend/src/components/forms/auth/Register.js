@@ -19,7 +19,6 @@ const Register = ({ createUser, style, setshowregister }) => {
           setTimeout(() => {
             createUser(values);
             setSubmitting(false);
-            // check();
             // resetForm(true);
           }, 400);
         }}

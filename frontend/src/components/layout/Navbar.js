@@ -107,7 +107,7 @@ const Navbar = ({ authReducer: { loading, user, googleUser }, logout }) => {
       >
         <div className='brian-name-container d-none d-lg-flex col-lg-2 px-0'>
           <Link to='/'>
-            <h1 className='landscape-brian-name ml-4 mt-4'>Brian Vasquez</h1>
+            <h1 className='landscape-brian-name'>Brian Vasquez</h1>
           </Link>
         </div>
         <div className='link-container col-12 col-lg-10'>

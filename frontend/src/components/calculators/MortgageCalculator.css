@@ -12,6 +12,10 @@
   ); */
 }
 
+.current-rate {
+  font-weight: bold;
+}
+
 .form-group {
   padding-left: 10px;
   padding-right: 10px;

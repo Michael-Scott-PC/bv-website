@@ -355,7 +355,7 @@ const MortgageCalculator = () => {
                 </div>
                 <input
                   type='text'
-                  className='form-control'
+                  className='form-control current-rate'
                   id='inlineFormInputGroup'
                   placeholder={currentRate}
                 />
@@ -366,7 +366,7 @@ const MortgageCalculator = () => {
                 </div>
                 <input
                   type='text'
-                  className='form-control'
+                  className='form-control current-rate'
                   id='inlineFormInputGroup'
                   placeholder={currentApr}
                 />
