@@ -354,7 +354,7 @@ const ListingDetail = ({
                 <li className='listing-detail-item col-12 d-flex'>
                   <div className='detail-header col-4'>Open House Time: </div>
                   <div className='detail col-8'>
-                    {open_house && moment(open_house).format('h:mma') - ' '}
+                    {open_house && moment(open_house).format('h:mma')} -{' '}
                     {open_house_end_time &&
                       moment(open_house_end_time).format('h:mma')}
                   </div>
