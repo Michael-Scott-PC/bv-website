@@ -51,24 +51,24 @@ const FeaturedListings = ({
                 </h2>
               </div>
               <div className='card-body'>
-                <h4 className='card-title'>
+                <h4 className='card-title featured-listing-address'>
                   {listing.address} <br />
                   <i className='fas fa-map-marker-alt'></i> {listing.city},{' '}
                   {listing.state} {listing.zipcode}
                 </h4>
-                <p className='info'>
+                <p className='info featured-listing-info'>
                   <i className='fab fa-microsoft mr-2'></i> Sqft:{' '}
                   {listing.square_feet}
                 </p>
-                <p className='info'>
+                <p className='info featured-listing-info'>
                   <i className='fas fa-bath mr-2'></i> Bathrooms:{' '}
                   {listing.bathrooms}
                 </p>
-                <p className='info'>
+                <p className='info featured-listing-info'>
                   <i className='fas fa-bed mr-2'></i> Bedroom:{' '}
                   {listing.bedrooms}
                 </p>
-                <Link to={`/listing/${listing.id}`} className='info btn'>
+                <Link to={`/listing/${listing.id}`} className='info btn mt-3'>
                   More Info
                 </Link>
               </div>

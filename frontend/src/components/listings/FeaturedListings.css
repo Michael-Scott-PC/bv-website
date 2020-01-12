@@ -1,3 +1,11 @@
+h4.card-title.featured-listing-address {
+  letter-spacing: 1px;
+}
+
+.recent-listing.card-header.text-center.mx-3 {
+  padding-bottom: 2px;
+}
+
 .recent-listing-card {
   color: #ffffff;
   background-color: #676f97;
@@ -45,4 +53,18 @@ img.cover-photo:hover {
 
 .badge-price {
   background-color: #3ed43f;
+}
+
+@media (min-width: 1000px) {
+  .info.btn {
+    width: 60%;
+    font-size: 1em;
+  }
+  h4.card-title.featured-listing-address {
+    font-size: 1.15em;
+  }
+  .featured-listing-info {
+    font-size: 1em !important;
+    margin-bottom: 5px;
+  }
 }
