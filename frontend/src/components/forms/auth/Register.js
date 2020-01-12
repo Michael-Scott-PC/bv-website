@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import { createUser } from '../../../actions/profile';
 import RegisterSchema from '../schemas/registerSchema';
 
-import GoogleAuth from './GoogleAuth';
+// import GoogleAuth from './GoogleAuth';
 
 const Register = ({ createUser, style, setshowregister }) => {
   return (
@@ -187,9 +187,9 @@ const Register = ({ createUser, style, setshowregister }) => {
                   </Button>
                 </Col>
               </Row>
-              <span className='divider mx-auto'></span>
+              {/* <span className='divider mx-auto'></span>
               <h2 className='text-center mt-3'>Or Register with Google</h2>
-              <GoogleAuth />
+              <GoogleAuth /> */}
             </Form>
           </Fragment>
         )}

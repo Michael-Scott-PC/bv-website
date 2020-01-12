@@ -6,9 +6,9 @@ import { Formik } from 'formik';
 import PropTypes from 'prop-types';
 
 import LoginSchema from '../schemas/loginSchema';
-import GoogleAuth from './GoogleAuth';
+// import GoogleAuth from './GoogleAuth';
 
-import { loginUser, signIn } from '../../../actions/profile';
+import { loginUser, googleSignIn } from '../../../actions/profile';
 
 const Login = ({ style, setshowlogin, loginUser, authReducer }) => {
   return (
@@ -95,9 +95,9 @@ const Login = ({ style, setshowlogin, loginUser, authReducer }) => {
                   </Button>
                 </Col>
               </Row>
-              <span className='divider mx-auto'></span>
+              {/* <span className='divider mx-auto'></span>
               <h2 className='text-center mt-3'>Or Sign in with Google</h2>
-              <GoogleAuth />
+              <GoogleAuth /> */}
             </Form>
           </Fragment>
         )}
@@ -115,4 +115,4 @@ const mapStateToProps = state => ({
   authReducer: state.authReducer
 });
 
-export default connect(mapStateToProps, { loginUser, signIn })(Login);
+export default connect(mapStateToProps, { loginUser, googleSignIn })(Login);
