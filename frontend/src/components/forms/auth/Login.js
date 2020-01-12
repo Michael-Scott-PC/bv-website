@@ -115,4 +115,4 @@ const mapStateToProps = state => ({
   authReducer: state.authReducer
 });
 
-export default connect(mapStateToProps, { loginUser, googleSignIn })(Login);
+export default connect(mapStateToProps, { loginUser })(Login);
