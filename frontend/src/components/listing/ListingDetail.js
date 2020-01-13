@@ -100,6 +100,31 @@ const ListingDetail = ({
     }
   };
 
+  const renderNextOpenHouseDate = () => {
+    const now = new Date();
+    const converted_date = new Date(open_house);
+    if (converted_date > now) {
+      return (
+        <Fragment>
+          {open_house && moment(open_house).format('MM-DD-YYYY')}{' '}
+        </Fragment>
+      );
+    }
+  };
+
+  const renderOpenHouseTime = () => {
+    const now = new Date();
+    const converted_date = new Date(open_house);
+    if (converted_date > now) {
+      return (
+        <Fragment>
+          {open_house && moment(open_house).format('h:mma')} -{' '}
+          {open_house_end_time && moment(open_house_end_time).format('h:mma')}
+        </Fragment>
+      );
+    }
+  };
+
   return (
     <Fragment>
       <div className='listing-detail'>
@@ -348,16 +373,12 @@ const ListingDetail = ({
                 <li className='listing-detail-item col-12 d-flex'>
                   <div className='detail-header col-4'>Next Open House: </div>
                   <div className='detail col-8'>
-                    {open_house && moment(open_house).format('MM-DD-YYYY')}{' '}
+                    {renderNextOpenHouseDate()}
                   </div>
                 </li>
                 <li className='listing-detail-item col-12 d-flex'>
                   <div className='detail-header col-4'>Open House Time: </div>
-                  <div className='detail col-8'>
-                    {open_house && moment(open_house).format('h:mma')} -{' '}
-                    {open_house_end_time &&
-                      moment(open_house_end_time).format('h:mma')}
-                  </div>
+                  <div className='detail col-8'>{renderOpenHouseTime()}</div>
                 </li>
                 <li className='listing-detail-item col-12 d-flex'>
                   <div className='detail-header col-4'>Realtor: </div>
