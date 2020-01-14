@@ -137,10 +137,7 @@ const ListingDetail = ({
                 onClick={() => history.goBack()}
                 className='col-1 d-none d-lg-block fa-angle-left-div-lg'
               >
-                <i
-                  onClick={() => history.goBack()}
-                  className='fas fa-angle-left'
-                ></i>
+                <i className='fas fa-angle-left'></i>
               </div>
               {/* show this section on lg> screens */}
               <div className='col-11 col-lg-5 d-none d-lg-flex offset-1'>
@@ -160,10 +157,7 @@ const ListingDetail = ({
                 onClick={() => history.goBack()}
                 className='col-1 d-lg-none fa-angle-left-div'
               >
-                <i
-                  onClick={() => history.goBack()}
-                  className='fas fa-angle-left'
-                ></i>
+                <i className='fas fa-angle-left'></i>
               </div>
               <div className='col-11 col-lg-5 d-lg-none'>
                 <p className='address'>
