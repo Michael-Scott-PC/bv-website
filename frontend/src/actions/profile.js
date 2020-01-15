@@ -8,8 +8,7 @@ import {
   LOGOUT,
   GOOGLE_SIGN_IN,
   AUTH_ERROR,
-  USER_LOADED,
-  GOOGLE_USER_LOADED
+  USER_LOADED
 } from './types';
 import axiosStrapi from '../api/axiosStrapi';
 
@@ -31,28 +30,6 @@ export const loadUser = () => async dispatch => {
 
     dispatch({
       type: USER_LOADED,
-      payload: res.data
-    });
-  } catch (error) {
-    dispatch({
-      type: AUTH_ERROR
-    });
-  }
-};
-
-// Load Google user
-export const loadGoogleUser = id => async dispatch => {
-  const token = localStorage.token;
-
-  try {
-    const res = await axiosStrapi.get('/google-users/:id', {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    });
-
-    dispatch({
-      type: GOOGLE_USER_LOADED,
       payload: res.data
     });
   } catch (error) {
@@ -164,24 +141,9 @@ export const logout = () => dispatch => {
   history.push('/');
 };
 
-// Google Sign In
-export const googleSignIn = res => {
-  // TODO grab user id and send it to loadGoogleUser
-  // if the access token does not work, generate a jwt and send (this works, verified with postman)
-
+export const signIn = res => {
   return {
     type: GOOGLE_SIGN_IN,
     payload: res
   };
-};
-
-// Google Sign in with Strapi
-export const strapiGoogleSignIn = () => async dispatch => {
-  try {
-    const res = await axiosStrapi.get('/connect/google');
-    console.log(res);
-    // dispatch()
-  } catch (error) {
-    console.log(error);
-  }
 };
