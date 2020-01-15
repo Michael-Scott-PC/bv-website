@@ -1,5 +1,10 @@
 import axiosStrapi from '../api/axiosStrapi';
-import { GET_FEATURED_LISTINGS, GET_ALL_LISTINGS, GET_LISTING } from './types';
+import {
+  GET_FEATURED_LISTINGS,
+  GET_ALL_LISTINGS,
+  GET_LISTING,
+  GET_LISTINGS_COUNT
+} from './types';
 
 // @route  GET /listings
 // @desc   Get the most recent listing
@@ -16,6 +21,24 @@ import { GET_FEATURED_LISTINGS, GET_ALL_LISTINGS, GET_LISTING } from './types';
 //     dispatch({
 //       type: GET_RECENT_LISTING,
 //       payload: res.data[0]
+//     });
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+// @route GET /listings/count
+// @desc Get count of all listings
+// @access Public
+// export const getCountOfListings = () => async dispatch => {
+//   try {
+//     console.log('line30');
+//     const res = await axiosStrapi.get('/listings/count');
+//     console.log(res);
+
+//     dispatch({
+//       type: GET_LISTINGS_COUNT,
+//       payload: res.data
 //     });
 //   } catch (error) {
 //     console.log(error);
@@ -44,10 +67,16 @@ export const getFeaturedListings = () => async dispatch => {
 export const getAllListings = () => async dispatch => {
   try {
     const res = await axiosStrapi.get('/listings?publish_eq=true');
+    const resCount = await axiosStrapi.get('/listings/count');
 
     dispatch({
       type: GET_ALL_LISTINGS,
       payload: res.data
+    });
+
+    dispatch({
+      type: GET_LISTINGS_COUNT,
+      payload: resCount.data
     });
   } catch (error) {
     console.log(error);

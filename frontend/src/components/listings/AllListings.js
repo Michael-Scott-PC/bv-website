@@ -5,13 +5,9 @@ import PropTypes from 'prop-types';
 
 import { getAllListings } from '../../actions/listing';
 
-import Listing from './Listing';
-import Spinner from '../spinner/Spinner';
+import CustomPagination from './CustomPagination';
 
-const AllListings = ({
-  getAllListings,
-  listingReducer: { allListings, loading }
-}) => {
+const AllListings = ({ getAllListings }) => {
   useEffect(() => {
     getAllListings();
   }, [getAllListings]);
@@ -23,15 +19,7 @@ const AllListings = ({
           Browse Listings
         </h1>
         <div className='row justify-listings'>
-          {allListings.length === 0 || loading ? (
-            <Spinner />
-          ) : (
-            allListings.map(listing => (
-              <div key={listing.id} className='col-md-6 col-lg-4 mb-5'>
-                <Listing listing={listing} />
-              </div>
-            ))
-          )}
+          <CustomPagination />
         </div>
       </div>
     </Fragment>
