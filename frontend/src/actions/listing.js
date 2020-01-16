@@ -3,7 +3,8 @@ import {
   GET_FEATURED_LISTINGS,
   GET_ALL_LISTINGS,
   GET_LISTING,
-  GET_LISTINGS_COUNT
+  GET_LISTINGS_COUNT,
+  SET_PAGE_NUMBER
 } from './types';
 
 // @route  GET /listings
@@ -97,4 +98,11 @@ export const getListing = id => async dispatch => {
   } catch (error) {
     console.log(error);
   }
+};
+
+export const updateStorePageNumber = number => dispatch => {
+  dispatch({
+    type: SET_PAGE_NUMBER,
+    payload: number
+  });
 };

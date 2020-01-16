@@ -2,7 +2,8 @@ import {
   GET_ALL_LISTINGS,
   GET_LISTING,
   GET_FEATURED_LISTINGS,
-  GET_LISTINGS_COUNT
+  GET_LISTINGS_COUNT,
+  SET_PAGE_NUMBER
 } from '../actions/types';
 
 const initialState = {
@@ -10,6 +11,7 @@ const initialState = {
   listing: {},
   allListings: [],
   listingsCount: null,
+  storePageNumber: 1,
   loading: true
 };
 
@@ -40,6 +42,11 @@ export default function(state = initialState, action) {
         ...state,
         listingsCount: payload,
         loading: false
+      };
+    case SET_PAGE_NUMBER:
+      return {
+        ...state,
+        storePageNumber: payload
       };
     default:
       return state;

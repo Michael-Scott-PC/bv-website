@@ -6,12 +6,14 @@ import PageItem from 'react-bootstrap/PageItem';
 import Listing from '../listings/Listing';
 import Spinner from '../spinner/Spinner';
 
+import { updateStorePageNumber } from '../../actions/listing';
+
 const CustomPagination = ({
-  listingReducer: { allListings, listingsCount }
+  listingReducer: { allListings, listingsCount, storePageNumber },
+  updateStorePageNumber
 }) => {
-  const [active, setActive] = useState(1);
   const handlePageTurn = number => {
-    setActive(number);
+    updateStorePageNumber(number);
   };
 
   // getAllListings was called in AllListings component so we have the data we need in listingReducer.
@@ -75,7 +77,7 @@ const CustomPagination = ({
       pages.push(
         <PageItem
           key={pageNumber}
-          active={pageNumber === active}
+          active={pageNumber === storePageNumber}
           onClick={() => handlePageTurn(pageNumber)}
         >
           {pageNumber}
@@ -102,7 +104,7 @@ const CustomPagination = ({
       pages.push(
         <PageItem
           key={pageNumber}
-          active={pageNumber === active}
+          active={pageNumber === storePageNumber}
           onClick={() => handlePageTurn(pageNumber)}
         >
           {pageNumber}
@@ -118,11 +120,15 @@ const CustomPagination = ({
         {!allListings ? (
           <Spinner />
         ) : (
-          renderListingsSmallerScreens()[active - 1]
+          renderListingsSmallerScreens()[storePageNumber - 1]
         )}
       </div>
       <div className='listings-per-page d-none d-lg-flex row m-auto'>
-        {!allListings ? <Spinner /> : renderListingsLargerScreens()[active - 1]}
+        {!allListings ? (
+          <Spinner />
+        ) : (
+          renderListingsLargerScreens()[storePageNumber - 1]
+        )}
       </div>
       <Pagination
         className='d-lg-none'
@@ -146,4 +152,6 @@ const mapStateToProps = state => ({
   listingReducer: state.listingReducer
 });
 
-export default connect(mapStateToProps)(CustomPagination);
+export default connect(mapStateToProps, { updateStorePageNumber })(
+  CustomPagination
+);
