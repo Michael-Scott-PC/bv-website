@@ -114,20 +114,20 @@ const CustomPagination = ({
 
   return (
     <Fragment>
-      <div className='listings-per-page d-lg-none row'>
+      <div className='listings-per-page d-lg-none row m-auto mr-0'>
         {!allListings ? (
           <Spinner />
         ) : (
           renderListingsSmallerScreens()[active - 1]
         )}
       </div>
-      <div className='listings-per-page d-none d-lg-flex row'>
+      <div className='listings-per-page d-none d-lg-flex row m-auto'>
         {!allListings ? <Spinner /> : renderListingsLargerScreens()[active - 1]}
       </div>
       <Pagination
         className='d-lg-none'
         style={{ justifyContent: 'center' }}
-        size='sm'
+        size='lg'
       >
         {renderPagesSmallerScreens()}
       </Pagination>
