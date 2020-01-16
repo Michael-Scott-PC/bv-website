@@ -48,13 +48,13 @@ export const createUser = values => async dispatch => {
       type: CREATE_USER,
       payload: res.data
     });
-
     dispatch(setAlert('You have successfully registered!', 'success'));
+    dispatch(loadUser());
 
-    history.push('/');
+    // history.push('/');
   } catch (err) {
     console.log(err.response.data.error);
-    console.log(err.response.data.message);
+    console.log(err.response.data.message[0].messages[0].message);
 
     dispatch({
       type: ERROR_CREATE_USER,
@@ -64,7 +64,9 @@ export const createUser = values => async dispatch => {
       }
     });
 
-    dispatch(setAlert(`${err.response.data.message}`, 'danger'));
+    dispatch(
+      setAlert(`${err.response.data.message[0].messages[0].message}`, 'danger')
+    );
   }
 };
 
@@ -113,6 +115,7 @@ export const loginUser = values => async dispatch => {
     // history.push('/');
   } catch (err) {
     console.log(err.response);
+    console.log(err.response.data.message[0].messages[0].message);
 
     dispatch({
       type: ERROR_LOGIN,
@@ -122,7 +125,10 @@ export const loginUser = values => async dispatch => {
       }
     });
 
-    if (err.response.data.message === 'Identifier or password invalid.') {
+    if (
+      err.response.data.message[0].messages[0].message ===
+      'Identifier or password invalid.'
+    ) {
       dispatch(
         setAlert(
           'Your email and/or password appears to be incorrect. Please try again.',
