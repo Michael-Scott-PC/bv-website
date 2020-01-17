@@ -86,13 +86,6 @@ const NewsEvents = ({
     if (jsx.length === 1) {
       return (
         <Fragment>
-          <Helmet>
-            <title>News &amp; Events</title>
-            <meta
-              name='description'
-              content="Upcoming open houses for Detroit homes and Brian's twitter feed."
-            />
-          </Helmet>
           <h1 key={'open-house-header'} className='ml-4 mt-5 col-12'>
             Upcoming Open Houses
           </h1>
@@ -107,13 +100,22 @@ const NewsEvents = ({
   };
 
   return (
-    <div className='container-fluid mb-5'>
-      <div className='row'>
-        <div className='col-lg-6'>{renderOpenHouses()}</div>
-        <br />
-        <div className='col-lg-6'>{renderTwitterFeed()}</div>
+    <Fragment>
+      <Helmet>
+        <title>News &amp; Events</title>
+        <meta
+          name='description'
+          content="Upcoming open houses for Detroit homes and Brian's twitter feed."
+        />
+      </Helmet>
+      <div className='container-fluid mb-5'>
+        <div className='row'>
+          <div className='col-lg-6'>{renderOpenHouses()}</div>
+          <br />
+          <div className='col-lg-6'>{renderTwitterFeed()}</div>
+        </div>
       </div>
-    </div>
+    </Fragment>
   );
 };
 
