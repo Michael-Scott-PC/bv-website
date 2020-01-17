@@ -51,7 +51,11 @@ const Footer = ({ getBrianInfo, brian: { brian } }) => {
           {email && (
             <div className='row py-1'>
               <div className='col-sm-12'>
-                <a href='https://' target='_blank' rel='noopener noreferrer'>
+                <a
+                  href={`mailto:${email}`}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
                   <p className='text-center mb-1 contact-info'>
                     <i className='fas fa-envelope mr-2'></i>
                     {email}
@@ -63,7 +67,11 @@ const Footer = ({ getBrianInfo, brian: { brian } }) => {
           {office_phone && (
             <div className='row py-1'>
               <div className='col-sm-12'>
-                <a href='https://' target='_blank' rel='noopener noreferrer'>
+                <a
+                  href={`tel:${office_phone}`}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
                   <p className='text-center mb-1 contact-info'>
                     <i className='fas fa-phone mr-2'></i>Office: {office_phone}
                   </p>
@@ -74,7 +82,11 @@ const Footer = ({ getBrianInfo, brian: { brian } }) => {
           {cell && (
             <div className='row '>
               <div className='col-sm-12'>
-                <a href='https://' target='_blank' rel='noopener noreferrer'>
+                <a
+                  href={`tel:${cell}`}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
                   <p className='text-center contact-info'>
                     <i className='fas fa-mobile-alt mr-2'></i>Cell: {cell}
                   </p>
