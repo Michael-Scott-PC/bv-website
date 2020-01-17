@@ -28,9 +28,6 @@
 }
 
 @media (min-width: 1000px) {
-  /* .open-house-row {
-    height: 25vh;
-  } */
   .open-house-card {
     width: 90%;
     height: auto;
