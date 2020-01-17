@@ -1,6 +1,7 @@
 import './NewsEvents.css';
 import React, { useEffect, Fragment } from 'react';
 import { connect } from 'react-redux';
+import { Helmet } from 'react-helmet';
 import moment from 'moment';
 
 import { getAllListings } from '../../actions/listing';
@@ -85,6 +86,13 @@ const NewsEvents = ({
     if (jsx.length === 1) {
       return (
         <Fragment>
+          <Helmet>
+            <title>News &amp; Events</title>
+            <meta
+              name='description'
+              content="Upcoming open houses for Detroit homes and Brian's twitter feed."
+            />
+          </Helmet>
           <h1 key={'open-house-header'} className='ml-4 mt-5 col-12'>
             Upcoming Open Houses
           </h1>
