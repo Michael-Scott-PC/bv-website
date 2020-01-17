@@ -147,7 +147,7 @@ export const logout = () => dispatch => {
   history.push('/');
 };
 
-export const signIn = res => {
+export const googleSignIn = res => {
   return {
     type: GOOGLE_SIGN_IN,
     payload: res

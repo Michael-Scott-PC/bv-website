@@ -51,13 +51,13 @@ const NewsEvents = ({
               <div className='row open-house-row'>
                 <div className='col-5 col-md-4 open-house-img-col'>
                   <img
-                    className='card-img-top cover-thumbnail'
+                    className='card-img-top cover-thumbnail open-house-thumbnail'
                     src={`${process.env.REACT_APP_STRAPIURL}${allListings[i].cover_photo.url}`}
                     alt='property for sale'
                     style={{
                       width: '100%',
                       height: '120px',
-                      objectFit: 'fill'
+                      objectFit: 'cover'
                     }}
                   />
                 </div>
