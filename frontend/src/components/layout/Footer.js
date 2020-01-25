@@ -27,22 +27,22 @@ const Footer = ({ getBrianInfo, brian: { brian } }) => {
           <div className='row text-center mb-1'>
             <div className='col-sm-12 mt-4'>
               {linkedin && (
-                <a href={`${linkedin}`} alt='linkedin icon'>
+                <a href={`${linkedin}`} aria-label='Linkedin icon'>
                   <i className='fab fa-linkedin-in mr-3'></i>
                 </a>
               )}
               {facebook && (
-                <a href={`${facebook}`} alt='facebook icon'>
+                <a href={`${facebook}`} aria-label='Facebook icon'>
                   <i className='fab fa-facebook-f mr-3'></i>
                 </a>
               )}
               {twitter && (
-                <a href={`${twitter}`} alt='twitter icon'>
+                <a href={`${twitter}`} aria-label='Twitter icon'>
                   <i className='fab fa-twitter mr-3'></i>
                 </a>
               )}
               {instagram && (
-                <a href={`${instagram}`} alt='instagram icon'>
+                <a href={`${instagram}`} aria-label='Instagram icon'>
                   <i className='fab fa-instagram'></i>
                 </a>
               )}
